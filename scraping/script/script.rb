@@ -12,12 +12,12 @@ url = base_url + surf_spot
 html_file = URI.open(url).read
 html_doc = Nokogiri::HTML(html_file)
 
-html_selector = '.sl-ideal-conditions__condition__description'
+html_selector = '.sl-ideal-conditions__condition__description p'
 
-#this outputs all the content from the ideal conditions
-#we need to divide it/organize it to output a JSON per spot with
-#JSON:  surf spot / swell direction / wind / surf height / tides
+# this outputs all the content from the ideal conditions
+# we need to divide it/organize it to output a JSON per spot with
+# JSON:  surf spot / swell direction / wind / surf height / tides
 
 html_doc.search(html_selector).each do |element|
-  p element.text.strip
+  p element.text
 end
