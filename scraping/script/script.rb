@@ -68,7 +68,18 @@ spot_links.each do |link|
       spot[title] = element.css('h2').text
     end
   end
-  puts "Done scraping spot #{spot[:spot_name]}"
+  # select the container & loop through each div
+  html_doc.search('.sl-travel-guide__notes div').each do |element|
+    # select the title (Access)
+    title = element.css('h3').text
+    # check the matching title
+    if ['Access'].include?(title)
+    # read 'Spot Access' & add the info to the spot JSON
+      spot[title] = element.css('p').text
+    end
+  end
+
+  puts "  Done scraping spot #{spot[:spot_name]}"
   spots << spot
 end
 
