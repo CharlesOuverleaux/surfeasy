@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_132349) do
+ActiveRecord::Schema.define(version: 2021_06_01_151939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "spots", force: :cascade do |t|
+    t.string "name"
+    t.string "surfline_id"
+    t.float "lon"
+    t.float "lat"
+    t.string "country"
+    t.string "ideal_swell_direction"
+    t.string "ideal_wind_direction"
+    t.string "ideal_tide"
+    t.string "description"
+    t.string "ability_level"
+    t.string "vibe"
+    t.string "access"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
