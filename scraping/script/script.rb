@@ -23,6 +23,12 @@ def get_html_doc(url)
   return Nokogiri::HTML(html_file)
 end
 
+def get_location(spot_id)
+  url = "https://services.surfline.com/kbyg/spots/forecasts/wave?spotId=#{spot_id}"
+  res = JSON.parse(URI.open(url).read)
+  res['associated']['location']
+end
+
 puts "Getting all the spots from the regions"
 spot_links = []
 regions.each do |region|
@@ -40,19 +46,23 @@ spot_links.each do |link|
   # split link and take: id & spot name
   link_parts = link.split('/')
   spot = {
-    country: 'Portugal',
-    surfline_id: link_parts.last,
-    spot_name: link_parts[-2]
+    'country' => 'Portugal',
+    'surfline_id' => link_parts.last,
+    'spot_name' => link_parts[-2]
   }
+
+  location = get_location(spot['surfline_id'])
+  spot['latitude'] = location['lat']
+  spot['longitude'] = location['lon']
 
   # scrape spot details
   url = "#{base_url}#{link}"
   html_doc = get_html_doc(url)
   # ideal condition search
   html_doc.search('.sl-ideal-conditions__condition__description').each do |element|
-     key = element.css('h5').text
-     value = element.css('p').text
-     spot[key] = value
+    key = element.css('h5').text
+    value = element.css('p').text
+    spot[key] = value
   end
   # description
   description = html_doc.css('.sl-travel-guide__overview__description').text
@@ -64,7 +74,7 @@ spot_links.each do |link|
     title = element.css('h3').text
     # check the matching title
     if ['Ability Level', 'Local Vibe'].include?(title)
-    # add the info to the spot JSON
+      # add the info to the spot JSON
       spot[title] = element.css('h2').text
     end
   end
@@ -74,18 +84,16 @@ spot_links.each do |link|
     title = element.css('h3').text
     # check the matching title
     if ['Access'].include?(title)
-    # read 'Spot Access' & add the info to the spot JSON
+      # read 'Spot Access' & add the info to the spot JSON
       spot[title] = element.css('p').text
     end
   end
-
-  puts "  Done scraping spot #{spot[:spot_name]}"
+  puts "  Done scraping #{spot['spot_name']} [#{spots.length + 1}/#{spot_links.length}]"
   spots << spot
 end
 
 File.open('scraping/data/spots.json', 'wb') do |file|
   file.write(JSON.generate({
-    spots: spots
-  }))
+                             spots: spots
+                           }))
 end
-
