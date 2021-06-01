@@ -1,6 +1,5 @@
 require 'json'
 
-
 # clean database
 puts "Cleaning database..."
 Spot.destroy_all
@@ -20,6 +19,18 @@ spots.each do |spot|
                      surfline_id: spot["surfline_id"],
                      lat: spot["latitude"],
                      lon: spot["longitude"],
-                     country: spot["country"])
+                     country: spot["country"],
+                     ideal_swell_direction: spot["Swell Direction"],
+                     ideal_wind_direction: spot["Wind"],
+                     ideal_tide: spot["Tide"],
+                     description: spot["description"],
+                     ability_level: spot["Ability Level"],
+                     vibe: spot["Local Vibe"],
+                     access: spot["Access"])
   puts " added: #{item[:name]}"
 end
+
+puts "\n-----------------------------"
+puts "Seeding done"
+puts "Added #{Spot.count} spots to the database"
+
