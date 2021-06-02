@@ -1,0 +1,14 @@
+<div class="spot-card col p-2 my-3 border">
+  <div class="spot-basics mr-2 border">
+    <h3 class="spot-name"><%= spot[:data].name.gsub('-', ' ').titlecase %></h3>
+    <div class="spot-distance"><%= rand(10..20) %> km</div>
+    <div class="spot-reviews"></div>
+  </div>
+  <div class="spot-image mr-2 border"></div>
+  <div class="spot-conditions border">
+    <div class="spot-kpi"><%= spot[:kpi] %> <span class="indicator">%</span></div>
+    <div><%= spot[:wave_height] %> <span class="indicator">m</span></div>
+    <div><%= spot[:wind_speed] %> <span class="indicator">kph</span></div>
+    <div><%= spot[:period] %> <span class="indicator">sec</span></div>
+  </div>
+</div>
