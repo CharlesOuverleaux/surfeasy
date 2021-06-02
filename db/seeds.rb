@@ -1,8 +1,10 @@
 require 'json'
+require 'faker'
 
 # clean database
 puts "Cleaning database..."
 Spot.destroy_all
+User.destroy_all
 
 puts "\nStart seeding"
 
@@ -30,7 +32,28 @@ spots.each do |spot|
   puts " added: #{item[:name]}"
 end
 
+# seeding admin user & fake users
+admin = User.new(
+  username: 'admin',
+  password: '123456',
+  email: 'admin@surf-easy.com')
+admin.save
+
+puts "admin created 👌"
+
+10.times do
+  user = User.new(
+    username: Faker::Internet.username,
+    password: '123456',
+    email: Faker::Internet.email
+  )
+  user.save
+end
+
+puts "users created 🤩"
+
 puts "\n-----------------------------"
 puts "Seeding done"
 puts "Added #{Spot.count} spots to the database"
+puts "Added #{User.count} users to the database"
 
