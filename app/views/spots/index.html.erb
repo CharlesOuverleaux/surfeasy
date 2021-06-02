@@ -1,0 +1,12 @@
+<div class="container">
+
+  <% @spots.each do |spot| %>
+    <div class="col bg-light p-3 my-3">
+      <div><%= spot[:data].name %></div>
+      <div><%= spot[:kpi] %> %</div>
+
+    </div>
+  <% end %>
+
+
+</div>
