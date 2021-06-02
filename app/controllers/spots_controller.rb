@@ -11,26 +11,29 @@ class SpotsController < ApplicationController
   private
 
   def parse_filter_params
-    { location: { lon: 43.4, lat: 32.1 },
-      radius: params[:radius],
+    { location: [39.598, -9.070],
+      radius: params[:radius] || 30,
       skill_level: params[:skill_level] }
   end
 
   def filtered_spots
     # where spot is within radius of location
-    # geocoder?
+    # geocoder => finds spots near [lat lon]
+    Spot.near(@filters[:location], @filters[:radius], units: :km).to_a
+
     # calculate fit based on skill level and api data
     # return filtered spots
     # for now just take random spots
-    Spot.order(Arel.sql('RANDOM()')).take(rand(2..3))
+    # Spot.order(Arel.sql('RANDOM()')).take(rand(2..3))
   end
 
   def add_current_spot_data
     @spots.map! do |spot|
-      # get conditions for cards
+      # get conditions for spot
       conditions = current_conditions(spot)
 
       { data: spot,
+        distance: spot.distance_from(@filters[:location]).round,
         kpi: calculate_kpi(spot),
         wind_speed: conditions[:wind_speed],
         wave_height: conditions[:wave_height],
@@ -50,7 +53,6 @@ class SpotsController < ApplicationController
                period: data['data']['forecasts'][0]['swells'][0]['period'] }
     # Rails.cache.write(url, result)
     # cached = Rails.cache.read(url)
-
   end
 
   def sort_by_kpi
