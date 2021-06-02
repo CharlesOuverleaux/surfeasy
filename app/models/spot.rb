@@ -1,5 +1,5 @@
 class Spot < ApplicationRecord
-  has_many :users
+  has_many :reviews
   validates :name, presence: true
   validates :surfline_id, presence: true, uniqueness: true
   validates :lat, presence: true
