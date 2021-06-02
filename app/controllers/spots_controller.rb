@@ -19,12 +19,13 @@ class SpotsController < ApplicationController
     # geocoder?
     # calculate fit based on skill level and api data
     # return filtered spots
-    Spot.order(Arel.sql('RANDOM()')).take(10)
+    # for now just take random spots
+    Spot.order(Arel.sql('RANDOM()')).take(rand(5..15))
   end
 
   def add_current_spot_data
     @spots.map! do |spot|
-      # get data for cards
+      # get conditions for cards
       { data: spot,
         kpi: calculate_kpi(spot) }
       # add to spots
