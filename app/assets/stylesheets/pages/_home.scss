@@ -43,9 +43,16 @@
     background-color: white;
     border-radius: 8px;
 
+    input {
+      border: 0;
+
+      &:focus {
+        outline: none;
+      }
+    }
 
     img {
-      width: 22px;
+      width: 20px;
       height: 28px;
       margin-left: 10px;
     }
@@ -62,11 +69,17 @@
     border-radius: 20px;
     background-color: #f5ecec;
     color: black;
+    border: 1px solid #f8f9fa;
     font-size: 13px;
   }
 
+  .active {
+    background-color: #ffb427;
+    border-color: #ffffff;
+  }
+
   a {
-    background-color: blue;
+    background-color: #0077B6;
     padding: 10px;
     border-radius: 8px;
     color: white;
