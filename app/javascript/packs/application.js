@@ -27,4 +27,22 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  // get all skill pills
+  const pills = document.querySelectorAll(".skill_pill")
+
+  const activateSkill = (ev) => {
+    // remove active state
+    pills.forEach((pill) => {
+      pill.classList.remove("active")
+    })
+    // add active to selected
+    ev.currentTarget.classList.add("active")
+  }
+
+  // add click listener to every skill
+  pills.forEach((pill) => {
+    pill.addEventListener("click", ev => activateSkill(ev))
+  })
+
 });
