@@ -28,4 +28,49 @@
   }
 }
 
+.form {
+  margin-top: 50px;
+  padding: 10px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .location_con {
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+
+
+    img {
+      width: 22px;
+      height: 28px;
+      margin-left: 10px;
+    }
+  }
+
+  .skills_con {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .skill_pill {
+    margin: 8px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: #f5ecec;
+    color: black;
+    font-size: 13px;
+  }
+
+  a {
+    background-color: blue;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+  }
+}
+
 
