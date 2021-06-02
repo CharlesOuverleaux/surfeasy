@@ -5,4 +5,6 @@ class Spot < ApplicationRecord
   validates :lat, presence: true
   validates :lon, presence: true
   validates :country, presence: true
+
+  reverse_geocoded_by :lat, :lon
 end

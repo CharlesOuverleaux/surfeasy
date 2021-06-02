@@ -1,7 +1,7 @@
 <div class="spot-card col p-2 my-3 border">
   <div class="spot-basics mr-2 border">
     <h3 class="spot-name"><%= spot[:data].name.gsub('-', ' ').titlecase %></h3>
-    <div class="spot-distance"><%= rand(10..20) %> km</div>
+    <div class="spot-distance"><%= spot[:distance] %> km</div>
     <div class="spot-reviews"></div>
   </div>
   <div class="spot-image mr-2 border"></div>
