@@ -1,1 +1,31 @@
-// Specific CSS for your home-page
+#banner {
+  padding: 40px;
+  background-image: url("banner.jpg");
+  background-size: cover;
+  background-position-x: center;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+
+  p {
+    margin: 10px 0px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  h1 {
+    margin: 0;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}
+
+
