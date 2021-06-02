@@ -66,8 +66,8 @@ spots.each do |spot|
                      ability_level: spot["Ability Level"],
                      vibe: spot["Local Vibe"],
                      access: spot["Access"])
-  puts " added: #{item[:name]}"
   assign_random_review(item)
+  puts " added: #{item[:name]}, #{item.reviews.count} reviews"
 end
 
 puts "\n-----------------------------"
