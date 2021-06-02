@@ -1,0 +1,11 @@
+<%= render 'shared/navbar' %>
+
+
+  <div class="location_con">
+      <input type="text" placeholder="Insert location...">
+      <img src="<%= image_path("location.png") %>" alt="">
+    </div>`
+
+    <a href="/spots">
+      Search the Ocean
+    </a>
