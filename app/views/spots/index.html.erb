@@ -2,7 +2,7 @@
 
   <% @spots.each do |spot| %>
     <div class="col bg-light p-3 my-3">
-      <div><%= spot[:data].name %></div>
+      <div><%= spot[:data].name.gsub('-', ' ').titlecase %></div>
       <div>kpi: <%= spot[:kpi] %> %</div>
       <div>wind: <%= spot[:wind_speed] %> kph</div>
       <div>wave: <%= spot[:wave_height] %> m</div>
