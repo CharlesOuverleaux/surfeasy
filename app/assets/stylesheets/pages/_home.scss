@@ -1,1 +1,93 @@
-// Specific CSS for your home-page
+#banner {
+  padding: 40px;
+  background-image: url("banner.jpg");
+  background-size: cover;
+  background-position-x: center;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+
+  p {
+    margin: 10px 0px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  h1 {
+    margin: 0;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}
+
+.form {
+  margin-top: 50px;
+  padding: 20px;
+  height: 300px;
+
+  .location_con {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+
+    input {
+      border: 0;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    img {
+      width: 20px;
+      height: 28px;
+      margin-left: 10px;
+    }
+  }
+
+  .skills_con {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .skill_pill {
+    margin: 8px 0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: #f5ecec;
+    color: black;
+    border: 1px solid #f8f9fa;
+    font-size: 13px;
+  }
+
+  .active {
+    background-color: #ffb427;
+    border-color: #ffffff;
+  }
+
+  a {
+    display: block;
+    background-color: #0077B6;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    margin: 20px auto 0;
+    // browser differentiation
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+
