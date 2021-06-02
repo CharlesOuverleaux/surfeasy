@@ -28,8 +28,21 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 
+  let location_element = `
+    <div class="location_con">
+      <input type="text" placeholder="Insert location...">
+      <img src="assets/location.png" alt="Loc">
+    </div>`
+
   // get all skill pills
   const pills = document.querySelectorAll(".skill_pill")
+
+  const insertLocation = () => {
+    const form = document.querySelector("#banner .form")
+    console.log(form)
+    form.insertAdjacentHTML("beforeend", location_element);
+    location_element = ""
+  }
 
   const activateSkill = (ev) => {
     // remove active state
@@ -40,9 +53,16 @@ document.addEventListener('turbolinks:load', () => {
     ev.currentTarget.classList.add("active")
   }
 
+  const handleSkillClick = (ev) => {
+    activateSkill(ev)
+    if (location_element !== "") {
+      insertLocation()
+    }
+  }
+
   // add click listener to every skill
   pills.forEach((pill) => {
-    pill.addEventListener("click", ev => activateSkill(ev))
+    pill.addEventListener("click", ev => handleSkillClick(ev))
   })
 
 });
