@@ -27,4 +27,61 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  let location_element = `
+    <div class="location_con">
+      <input type="text" placeholder="Insert location...">
+      <img src="assets/location.png" alt="Loc">
+    </div>`
+
+  let button_element = `
+    <a href="/spots">
+      Search the Ocean
+    </a>`
+  let buttonAdded = false
+
+  // get important elements
+  const pills = document.querySelectorAll(".skill_pill")
+  const form = document.querySelector("#banner .form")
+
+  const activateSkill = (ev) => {
+    // remove active for all
+    pills.forEach((pill) => {
+      pill.classList.remove("active")
+    })
+    // add active to selected
+    ev.currentTarget.classList.add("active")
+  }
+
+  const handleKeyUp = (ev) => {
+    const value = ev.currentTarget.value.trim()
+
+    if (value.length > 0 && !buttonAdded) {
+      // add button
+      form.insertAdjacentHTML("beforeend", button_element);
+      buttonAdded = true
+    }
+    else if (value.length == 0 && buttonAdded) {
+      // remove -> avoid searching with empty input
+      form.removeChild(form.lastChild);
+      buttonAdded = false
+    }
+  }
+
+  const handleSkillClick = (ev) => {
+    activateSkill(ev)
+    if (location_element !== "") {
+      form.insertAdjacentHTML("beforeend", location_element);
+      location_element = ""
+      // add input listener
+      const input = form.querySelector("input")
+      input.addEventListener("keyup", ev => handleKeyUp(ev))
+    }
+  }
+
+  // add click listener to every skill
+  pills.forEach((pill) => {
+    pill.addEventListener("click", ev => handleSkillClick(ev))
+  })
+
 });
