@@ -34,18 +34,18 @@ document.addEventListener('turbolinks:load', () => {
       <img src="assets/location.png" alt="Loc">
     </div>`
 
-  // get all skill pills
-  const pills = document.querySelectorAll(".skill_pill")
+  let button_element = `
+    <a href="/spots">
+      Search the Ocean
+    </a>`
+  let buttonAdded = false
 
-  const insertLocation = () => {
-    const form = document.querySelector("#banner .form")
-    console.log(form)
-    form.insertAdjacentHTML("beforeend", location_element);
-    location_element = ""
-  }
+  // get important elements
+  const pills = document.querySelectorAll(".skill_pill")
+  const form = document.querySelector("#banner .form")
 
   const activateSkill = (ev) => {
-    // remove active state
+    // remove active for all
     pills.forEach((pill) => {
       pill.classList.remove("active")
     })
@@ -53,10 +53,29 @@ document.addEventListener('turbolinks:load', () => {
     ev.currentTarget.classList.add("active")
   }
 
+  const handleKeyUp = (ev) => {
+    const value = ev.currentTarget.value.trim()
+
+    if (value.length > 0 && !buttonAdded) {
+      // add button
+      form.insertAdjacentHTML("beforeend", button_element);
+      buttonAdded = true
+    }
+    else if (value.length == 0 && buttonAdded) {
+      // remove -> avoid searching with empty input
+      form.removeChild(form.lastChild);
+      buttonAdded = false
+    }
+  }
+
   const handleSkillClick = (ev) => {
     activateSkill(ev)
     if (location_element !== "") {
-      insertLocation()
+      form.insertAdjacentHTML("beforeend", location_element);
+      location_element = ""
+      // add input listener
+      const input = form.querySelector("input")
+      input.addEventListener("keyup", ev => handleKeyUp(ev))
     }
   }
 
