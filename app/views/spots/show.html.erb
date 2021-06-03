@@ -23,9 +23,11 @@
 <ul>
   <% @spot.reviews.each do |review| %>
     <li><%= review[:title] %></li>
-    <%= link_to "Remove",
+    <% if current_user == review.user %>
+      <%= link_to "Remove",
         review_path(review),
         method: :delete,
         data: { confirm: "Are you sure?" } %>
+    <% end %>
   <% end %>
 </ul>
