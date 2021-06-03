@@ -41,7 +41,20 @@ class SpotsController < ApplicationController
   def current_conditions(spot)
     # retrieve and parse cached condition for spot from redis
     condition = JSON.parse($redis.get(spot.surfline_id), { symbolize_names: true })
-    return condition
+    # return cached condition if it exists
+    return condition if condition
+
+    # return live fetched condition if not found in cache
+    return fetch_condition(spot)
+  end
+
+  def fetch_condition(spot)
+    url = "https://services.surfline.com/kbyg/spots/forecasts/?spotId=#{spot.surfline_id}&days=1&intervalHours=3"
+    data = JSON.parse(URI.open(url).read)
+    return { weather: data['data']['forecasts'][0]['weather'],
+             wind_speed: data['data']['forecasts'][0]['wind']['speed'].to_i,
+             wave_height: data['data']['forecasts'][0]['surf']['max'].round(1),
+             period: data['data']['forecasts'][0]['swells'][0]['period'] }
   end
 
   def sort_by_kpi
