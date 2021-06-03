@@ -2,7 +2,7 @@
 import Typed from 'typed.js';
 
 var options = {
-  strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
+  strings: ['', 'Find the best <strong style="color:#0077B6">waves</strong> ^500 around you', 'Search ^500, <strong>Surf</strong> ^500, Relax ^500. Repeat'],
   typeSpeed: 40
 };
 

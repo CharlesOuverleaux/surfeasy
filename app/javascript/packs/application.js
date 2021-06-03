@@ -29,6 +29,10 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 
+  const levelTyped = document.querySelector(".header p span")
+  initTyped(levelTyped)
+
+
   let location_element = `
     <p><strong>Tell us where you are</stong></p>
     <div class="location_con">
