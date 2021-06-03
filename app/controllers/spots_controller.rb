@@ -22,9 +22,12 @@ class SpotsController < ApplicationController
   end
 
   def parse_filter_params
-    filters = { location: params[:location] || [39.598, -9.070],
+    # get lat long coordinates for query param location
+    coordinates = Geocoder.search(params[:location]).first.coordinates if(params[:location])
+
+    filters = { location: coordinates || [39.598, -9.070],
                 radius: params[:radius] || 30,
-                skill_level: params[:skill_level] }
+                skill_level: params[:skill] }
     return filters
   end
 
