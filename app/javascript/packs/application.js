@@ -60,6 +60,16 @@ document.addEventListener('turbolinks:load', () => {
       // add button
       form.insertAdjacentHTML("beforeend", button_element);
       buttonAdded = true
+
+      // Add button eventListener
+      const button = form.lastChild
+      button.addEventListener("click", ev => {
+        // get skill & location
+        const skill = form.querySelector(".active").innerText
+        const location = form.querySelector("input").value.trim()
+        // Change link
+        button.href=`/spots/?skill=${skill}&location=${location}`
+      })
     }
     else if (value.length == 0 && buttonAdded) {
       // remove -> avoid searching with empty input
@@ -85,3 +95,7 @@ document.addEventListener('turbolinks:load', () => {
   })
 
 });
+
+
+
+
