@@ -1,45 +1,80 @@
 .spot-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
-  justify-content: space-between;
-  background-color: #ffffff;
+  justify-content: flex-end;
+  color: white;
+  background-color: rgb(0, 59, 114);
+  position: relative;
+  letter-spacing: 0.3px;
+
+  height: 250px;
   h3 {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.125rem;
     margin-bottom: 0px;
   }
 }
 
 .spot-distance {
-  color: #626262;
+  color: #ffffff98;
   font-size: 0.875rem;
+  font-weight: bold;
 }
 
 .spot-kpi {
-  font-size: 1rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.875rem;
   font-weight: bold;
-  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgb(0, 30, 58);
   border-radius: 20px;
   padding: 0px 9px;
 }
 
-.spot-basics {
-  width: 33.3%;
+.spot-weather {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  left: 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.767);
+  > div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 6px;
+  }
+  svg {
+    height: 14px;
+    width: auto;
+  }
 }
 
-.spot-image {
-  background-color: rgb(0, 174, 255);
-  border-radius: 5px;
-  width: 33.3%;
+.spot-basics {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.131);
 }
+
+
 
 .spot-conditions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 33.3%;
+  opacity: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 0.875rem;
   .indicator {
-    font-weight: bold
+    opacity: 80%;
+    font-size: smaller;
+  }
+  &>div>svg {
+    height: 0.875rem;
+    width: auto;
+    margin-right: 8px;
   }
 }
