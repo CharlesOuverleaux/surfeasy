@@ -29,9 +29,10 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 
   let location_element = `
+    <p><strong>Tell us where you are</stong></p>
     <div class="location_con">
       <input type="text" placeholder="Insert location...">
-      <img src="assets/location.png" alt="Loc">
+      <img src="assets/location.svg" alt="Loc">
     </div>`
 
   let button_element = `

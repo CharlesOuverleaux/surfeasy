@@ -13,37 +13,28 @@
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-
-  h1 {
-    margin: 0;
-  }
-
-  img {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-  }
+  text-align: center;
 }
 
 .form {
   margin-top: 50px;
   padding: 20px;
   height: 300px;
+  text-align: center;
 
   .location_con {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background-color: white;
     border-radius: 8px;
+    border: 2px solid #f8f9fa;
 
     input {
       border: 0;
-
+      width: 100%;
+      color: white;
+      background: transparent;
       &:focus {
         outline: none;
       }
@@ -65,14 +56,14 @@
     margin: 8px 0;
     padding: 8px 15px;
     border-radius: 20px;
-    background-color: #f5ecec;
-    color: black;
-    border: 1px solid #f8f9fa;
+    color: white;
+    border: 2px solid #f8f9fa;
     font-size: 13px;
+    font-weight: bold;
   }
 
   .active {
-    background-color: #ffb427;
+    background-color: #0077B6;
     border-color: #ffffff;
   }
 
@@ -81,6 +72,7 @@
     background-color: #0077B6;
     padding: 10px;
     border-radius: 8px;
+    border: 2px solid #f8f9fa;
     color: white;
     margin: 20px auto 0;
     // browser differentiation
@@ -90,4 +82,6 @@
   }
 }
 
-
+::placeholder {
+  color: white;
+}
