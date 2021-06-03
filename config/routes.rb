@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # sidekiq admin
+  require "sidekiq/web"
   devise_for :users
   root to: 'pages#home'
   resources :spots, only: [:index]
