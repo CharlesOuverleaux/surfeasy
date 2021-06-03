@@ -1,5 +1,4 @@
 $redis = Redis.new
-
 url = ENV["REDISCLOUD_URL"]
 puts url
 if url
