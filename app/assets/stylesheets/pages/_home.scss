@@ -18,7 +18,7 @@
 
 .form {
   margin-top: 50px;
-  padding: 20px;
+  padding: 10px;
   height: 300px;
   text-align: center;
 
@@ -49,6 +49,7 @@
 
   .skills_con {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
   }
 
