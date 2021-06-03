@@ -20,6 +20,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import { initTyped } from 'plugins/typed-js.js'
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -27,6 +28,10 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  const levelTyped = document.querySelector(".header p span")
+  initTyped(levelTyped)
+
 
   let location_element = `
     <p><strong>Tell us where you are</stong></p>
