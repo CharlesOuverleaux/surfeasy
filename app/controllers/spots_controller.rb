@@ -47,7 +47,8 @@ class SpotsController < ApplicationController
         kpi: calculate_kpi(spot),
         wind_speed: conditions[:wind_speed],
         wave_height: conditions[:wave_height],
-        period: conditions[:period] }
+        period: conditions[:period],
+        weather: conditions[:weather] }
     end
   end
 
@@ -56,7 +57,7 @@ class SpotsController < ApplicationController
     condition = $redis.get(spot.surfline_id)
 
     # return cached condition if it exists
-    return JSON.parse(condition, {symbolize_names: true}) if condition
+    return JSON.parse(condition, { symbolize_names: true }) if condition
 
     # return live fetched condition if not found in cache
     return fetch_condition(spot)

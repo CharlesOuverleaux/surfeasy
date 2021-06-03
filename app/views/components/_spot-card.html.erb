@@ -1,5 +1,9 @@
 <div class="spot-card col p-3 my-3 rounded-lg">
-  <div class="spot-kpi"><%= spot[:kpi] %> <span class="indicator">%</span></div>
+  <div class="spot-weather">
+    <div><%= render 'icons/water' %> <%= rand(14..22) %> °c</div>
+    <div><%= render 'icons/weather/sunny' %> <%= spot[:weather][:temperature] %> °c</div>
+  </div>
+  <div class="spot-kpi" style="background-color: rgba(255, 255, 255, 0.8);"><%= spot[:kpi] %> <span class="indicator">%</span></div>
   <div class="spot-basics mr-2">
     <h3 class="spot-name"><%= spot[:data].name.gsub('-', ' ').titlecase %></h3>
     <div class="spot-distance"><%= spot[:distance] %> km</div>

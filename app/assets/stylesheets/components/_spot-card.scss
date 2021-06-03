@@ -26,11 +26,31 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: bold;
-  border: 2px solid rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgb(0, 30, 58);
   border-radius: 20px;
   padding: 0px 9px;
+}
+
+.spot-weather {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  left: 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.767);
+  > div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 6px;
+  }
+  svg {
+    height: 14px;
+    width: auto;
+  }
 }
 
 .spot-basics {
