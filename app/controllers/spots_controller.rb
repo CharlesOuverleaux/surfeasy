@@ -2,6 +2,7 @@ require 'open-uri'
 require 'json'
 class SpotsController < ApplicationController
   def index
+    update_cached_conditions
     @filters = parse_filter_params
     @spots = filtered_spots
     add_current_spot_data
@@ -34,21 +35,13 @@ class SpotsController < ApplicationController
         wind_speed: conditions[:wind_speed],
         wave_height: conditions[:wave_height],
         period: conditions[:period] }
-
-      # add to spots
-      # and kpi
     end
   end
 
   def current_conditions(spot)
-    url = "https://services.surfline.com/kbyg/spots/forecasts/?spotId=#{spot.surfline_id}&days=1&intervalHours=3"
-    data = JSON.parse(URI.open(url).read)
-    return { weather: data['data']['forecasts'][0]['weather'],
-             wind_speed: data['data']['forecasts'][0]['wind']['speed'].to_i,
-             wave_height: data['data']['forecasts'][0]['surf']['max'].round(1),
-             period: data['data']['forecasts'][0]['swells'][0]['period'] }
-    # Rails.cache.write(url, result)
-    # cached = Rails.cache.read(url)
+    # retrieve and parse cached condition for spot from redis
+    condition = JSON.parse($redis.get(spot.surfline_id), { symbolize_names: true })
+    return condition
   end
 
   def sort_by_kpi
@@ -59,5 +52,12 @@ class SpotsController < ApplicationController
     # calculate kpi for a spot
     # for now fake it with rand
     rand(100)
+  end
+
+  def update_cached_conditions
+    # check if cached conditions are older than 30 mins
+    condition = JSON.parse($redis.get(Spot.first.surfline_id), { symbolize_names: true })
+    # if they are, update them
+    FetchSpotConditionsJob.perform_later if condition[:created_at] < Time.now.to_i - 1800
   end
 end
