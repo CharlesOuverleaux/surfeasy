@@ -61,18 +61,15 @@ document.addEventListener('turbolinks:load', () => {
       form.insertAdjacentHTML("beforeend", button_element);
       buttonAdded = true
 
-      // Add the eventListener for the button
+      // Add button eventListener
       const button = form.lastChild
       button.addEventListener("click", ev => {
-        // get the skill
+        // get skill & location
         const skill = form.querySelector(".active").innerText
-        // get the location
         const location = form.querySelector("input").value.trim()
-        // Add both params in the link
+        // Change link
         button.href=`/spots/?skill=${skill}&location=${location}`
       })
-
-
     }
     else if (value.length == 0 && buttonAdded) {
       // remove -> avoid searching with empty input
