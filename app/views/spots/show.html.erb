@@ -11,6 +11,14 @@
   <li><%= @spot.access %></li>
 </ul>
 
+<h3>Reviews:</h3>
+
 <ul>
-  <li><%= @spot.reviews.first[:title] %></li>
+  <% @spot.reviews.each do |review| %>
+    <li><%= review[:title] %></li>
+    <%= link_to "Remove",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+  <% end %>
 </ul>
