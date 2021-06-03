@@ -1,6 +1,8 @@
 require 'open-uri'
 require 'json'
 class SpotsController < ApplicationController
+  before_action :set_spot, only: [:show]
+
   def index
     update_cached_conditions
     @filters = parse_filter_params
@@ -9,7 +11,15 @@ class SpotsController < ApplicationController
     sort_by_kpi
   end
 
+  def show
+    @spot = Spot.find(params[:id])
+  end
+
   private
+
+  def set_spot
+    @spot = Spot.find(params[:id])
+  end
 
   def parse_filter_params
     filters = { location: params[:location] || [39.598, -9.070],
