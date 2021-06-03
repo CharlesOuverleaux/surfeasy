@@ -40,9 +40,10 @@ class SpotsController < ApplicationController
 
   def current_conditions(spot)
     # retrieve and parse cached condition for spot from redis
-    condition = JSON.parse($redis.get(spot.surfline_id), { symbolize_names: true })
+    condition = $redis.get(spot.surfline_id)
+
     # return cached condition if it exists
-    return condition if condition
+    return JSON.parse(condition, {symbolize_names: true}) if condition
 
     # return live fetched condition if not found in cache
     return fetch_condition(spot)
@@ -69,8 +70,8 @@ class SpotsController < ApplicationController
 
   def update_cached_conditions
     # check if cached conditions are older than 30 mins
-    condition = JSON.parse($redis.get(Spot.first.surfline_id), { symbolize_names: true })
+    created_at = $redis.get('created_at')
     # if they are, update them
-    FetchSpotConditionsJob.perform_later if condition[:created_at] < Time.now.to_i - 1800
+    FetchSpotConditionsJob.perform_later if created_at.nil? || created_at.to_i < Time.now.to_i - 1800
   end
 end
