@@ -1,11 +1,15 @@
 class ReviewsController < ApplicationController
+  def new
+    @review = Review.new
+  end
+
   def create
-    @review = Review.new(review_params)
-    # we need `restaurant_id` to associate review with corresponding restaurant
-    @spot = Spot.find(params[:spot_id])
-    # @spot.restaurant = @restaurant
-    @spot.save
-    # redirect_to restaurant_path(@restaurant)
+    review = Review.new(review_params)
+    spot = Spot.find(params[:spot_id])
+    review.spot = spot
+    review.user = current_user
+    review.save
+    redirect_to spot_path(spot)
   end
 
   def destroy
@@ -17,7 +21,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    # missing description and rating
-    params.require(:review).permit(:title)
+    params.require(:review).permit(:title, :description, :rating)
   end
 end

@@ -11,14 +11,21 @@
   <li><%= @spot.access %></li>
 </ul>
 
+
 <h3>Reviews:</h3>
+<%= simple_form_for [ @spot, Review.new ] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :rating %>
+  <%= f.submit "Add review", class: "btn btn-primary" %>
+<% end %>
 
 <ul>
   <% @spot.reviews.each do |review| %>
     <li><%= review[:title] %></li>
     <%= link_to "Remove",
-                  review_path(review),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
+        review_path(review),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
   <% end %>
 </ul>
