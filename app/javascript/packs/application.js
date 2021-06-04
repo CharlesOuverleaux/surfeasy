@@ -47,7 +47,6 @@ document.addEventListener('turbolinks:load', () => {
     <a id="homepage_button" href="/spots">
       Search the Ocean
     </a>`
-  let buttonAdded = false
 
   // get important elements
   const pills = document.querySelectorAll(".skill_pill")
@@ -64,12 +63,12 @@ document.addEventListener('turbolinks:load', () => {
 
   const handleKeyUp = (ev) => {
     const value = ev.currentTarget.value.trim()
+    const button = document.querySelector('#homepage_button')
 
-    if (value.length > 0 && !buttonAdded) {
+    if (value.length > 0 && !button) {
       // add button
       const location_block = document.querySelector(".location_block")
       location_block.insertAdjacentHTML("beforeend", button_element);
-      buttonAdded = true
 
       // Add button eventListener
       const button = form.lastChild
@@ -81,10 +80,9 @@ document.addEventListener('turbolinks:load', () => {
         button.href=`/spots/?skill=${skill}&location=${location}`
       })
     }
-    else if (value.length == 0 && buttonAdded) {
+    else if (value.length == 0 && button) {
       // remove -> avoid searching with empty input
-      form.removeChild(form.lastChild);
-      buttonAdded = false
+      button.remove()
     }
   }
 
