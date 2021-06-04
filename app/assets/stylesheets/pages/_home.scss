@@ -64,13 +64,13 @@
   }
 
   .active {
-    background-color: #0077B6;
+    background-color: $light_blue;
     border-color: #ffffff;
   }
 
   a {
     display: block;
-    background-color: #0077B6;
+    background-color: $light_blue;
     padding: 10px;
     border-radius: 8px;
     border: 2px solid #f8f9fa;
