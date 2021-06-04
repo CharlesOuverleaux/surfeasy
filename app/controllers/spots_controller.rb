@@ -7,6 +7,8 @@ class SpotsController < ApplicationController
     update_cached_conditions
     @filters = parse_filter_params
     @spots = filtered_spots
+    @location = params[:location]
+
     add_current_spot_data
     sort_by_kpi
   end
@@ -24,6 +26,7 @@ class SpotsController < ApplicationController
 
     @distance = params[:distance]
     @kpi = params[:kpi]
+    @image_id = params[:image_id]
   end
 
   private
