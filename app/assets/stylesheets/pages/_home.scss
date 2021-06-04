@@ -16,36 +16,66 @@
   text-align: center;
 }
 
+.location_block {
+  margin-top: 50px;
+  padding: 10px;
+  animation: one-time-animation 1.5s forwards 1;
+}
+
+@keyframes one-time-animation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#homepage_button {
+  display: block;
+  background-color: $light_blue;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #f8f9fa;
+  color: white;
+  margin: 20px auto 0;
+  // browser differentiation
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  animation: one-time-animation 1.5s forwards 1;
+}
+
+.location_con {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #f8f9fa;
+
+  input {
+    border: 0;
+    width: 100%;
+    color: white;
+    background: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  img {
+    width: 20px;
+    height: 28px;
+    margin-left: 10px;
+  }
+}
+
 .form {
   margin-top: 50px;
   padding: 10px;
   height: 300px;
   text-align: center;
-
-  .location_con {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid #f8f9fa;
-
-    input {
-      border: 0;
-      width: 100%;
-      color: white;
-      background: transparent;
-      &:focus {
-        outline: none;
-      }
-    }
-
-    img {
-      width: 20px;
-      height: 28px;
-      margin-left: 10px;
-    }
-  }
 
   .skills_con {
     display: flex;
@@ -64,22 +94,8 @@
   }
 
   .active {
-    background-color: #0077B6;
+    background-color: $light_blue;
     border-color: #ffffff;
-  }
-
-  a {
-    display: block;
-    background-color: #0077B6;
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid #f8f9fa;
-    color: white;
-    margin: 20px auto 0;
-    // browser differentiation
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
   }
 }
 
