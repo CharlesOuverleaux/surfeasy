@@ -1,4 +1,4 @@
-<%= link_to spot_path(spot[:data])  do%>
+<%= link_to spot_path(spot[:data], distance: spot[:distance], kpi: spot[:kpi])  do%>
   <div class="spot-card col p-3 my-3 rounded-lg">
     <div class="spot-weather">
       <div><%= render 'icons/water' %> <%= rand(14..22) %> °c</div>
