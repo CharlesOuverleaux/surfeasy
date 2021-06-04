@@ -13,6 +13,17 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @conditions = current_conditions(@spot)
+    #refactor later
+    sum = 0
+    @spot.reviews.each do |review|
+      sum += review.rating
+    end
+    @review_count = @spot.reviews.count
+    @stars = (sum / @review_count).round
+
+    @distance = params[:distance]
+    @kpi = params[:kpi]
   end
 
   private
