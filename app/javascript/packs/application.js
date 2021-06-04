@@ -71,11 +71,11 @@ document.addEventListener('turbolinks:load', () => {
       location_block.insertAdjacentHTML("beforeend", button_element);
 
       // Add button eventListener
-      const button = form.lastChild
+      const button = document.querySelector('#homepage_button')
       button.addEventListener("click", ev => {
         // get skill & location
-        const skill = form.querySelector(".active").innerText
-        const location = form.querySelector("input").value.trim()
+        const skill = document.querySelector(".active").innerText
+        const location = document.querySelector(".location_con input").value.trim()
         // Change link
         button.href=`/spots/?skill=${skill}&location=${location}`
       })
