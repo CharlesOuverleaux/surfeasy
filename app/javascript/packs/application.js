@@ -34,17 +34,19 @@ document.addEventListener('turbolinks:load', () => {
 
 
   let location_element = `
-    <p><strong>Tell us where you are</stong></p>
-    <div class="location_con">
-      <input type="text" placeholder="Insert location...">
-      <img src="assets/location.svg" alt="Loc">
-    </div>`
+    <div class="location_block">
+      <p><strong>Tell us where you are</stong></p>
+      <div class="location_con">
+        <input type="text" placeholder="Insert location...">
+        <img src="assets/location.svg" alt="Loc">
+      </div>
+    </div>
+    `
 
   let button_element = `
-    <a href="/spots">
+    <a id="homepage_button" href="/spots">
       Search the Ocean
     </a>`
-  let buttonAdded = false
 
   // get important elements
   const pills = document.querySelectorAll(".skill_pill")
@@ -61,11 +63,12 @@ document.addEventListener('turbolinks:load', () => {
 
   const handleKeyUp = (ev) => {
     const value = ev.currentTarget.value.trim()
+    const button = document.querySelector('#homepage_button')
 
-    if (value.length > 0 && !buttonAdded) {
+    if (value.length > 0 && !button) {
       // add button
-      form.insertAdjacentHTML("beforeend", button_element);
-      buttonAdded = true
+      const location_block = document.querySelector(".location_block")
+      location_block.insertAdjacentHTML("beforeend", button_element);
 
       // Add button eventListener
       const button = form.lastChild
@@ -77,23 +80,26 @@ document.addEventListener('turbolinks:load', () => {
         button.href=`/spots/?skill=${skill}&location=${location}`
       })
     }
-    else if (value.length == 0 && buttonAdded) {
+    else if (value.length == 0 && button) {
       // remove -> avoid searching with empty input
-      form.removeChild(form.lastChild);
-      buttonAdded = false
+      button.remove()
     }
   }
 
   const handleSkillClick = (ev) => {
     activateSkill(ev)
     if (location_element !== "") {
-      form.insertAdjacentHTML("beforeend", location_element);
+      // remove skill pills when location block is added
+      $(".form").fadeOut(0)
+      // Add location element
+      const header = document.querySelector(".header")
+      header.insertAdjacentHTML("beforeend", location_element)
       location_element = ""
       // add input listener
-      const input = form.querySelector("input")
+      const input = document.querySelector(".location_block input")
       input.addEventListener("keyup", ev => handleKeyUp(ev))
+      }
     }
-  }
 
   // add click listener to every skill
   pills.forEach((pill) => {
