@@ -92,18 +92,16 @@ document.addEventListener('turbolinks:load', () => {
     activateSkill(ev)
     if (location_element !== "") {
       // remove skill pills when location block is added
-      setTimeout(function(){
-        form.remove()
-         // Add location element
-        const header = document.querySelector(".header")
-        header.insertAdjacentHTML("beforeend", location_element);
-        location_element = ""
-        // add input listener
-        const input = document.querySelector(".location_block input")
-        input.addEventListener("keyup", ev => handleKeyUp(ev))
-      }, 300);
+      $(".form").fadeOut(0)
+      // Add location element
+      const header = document.querySelector(".header")
+      header.insertAdjacentHTML("beforeend", location_element)
+      location_element = ""
+      // add input listener
+      const input = document.querySelector(".location_block input")
+      input.addEventListener("keyup", ev => handleKeyUp(ev))
+      }
     }
-  }
 
   // add click listener to every skill
   pills.forEach((pill) => {

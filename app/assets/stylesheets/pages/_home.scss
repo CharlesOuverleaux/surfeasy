@@ -18,6 +18,17 @@
 
 .location_block {
   margin-top: 50px;
+  padding: 10px;
+  animation: one-time-animation 1.5s forwards 1;
+}
+
+@keyframes one-time-animation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #homepage_button {
@@ -32,6 +43,7 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  animation: one-time-animation 1.5s forwards 1;
 }
 
 .location_con {
