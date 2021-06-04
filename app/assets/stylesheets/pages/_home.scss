@@ -16,36 +16,54 @@
   text-align: center;
 }
 
+.location_block {
+  margin-top: 50px;
+}
+
+#homepage_button {
+  display: block;
+  background-color: $light_blue;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #f8f9fa;
+  color: white;
+  margin: 20px auto 0;
+  // browser differentiation
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.location_con {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #f8f9fa;
+
+  input {
+    border: 0;
+    width: 100%;
+    color: white;
+    background: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  img {
+    width: 20px;
+    height: 28px;
+    margin-left: 10px;
+  }
+}
+
 .form {
   margin-top: 50px;
   padding: 10px;
   height: 300px;
   text-align: center;
-
-  .location_con {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid #f8f9fa;
-
-    input {
-      border: 0;
-      width: 100%;
-      color: white;
-      background: transparent;
-      &:focus {
-        outline: none;
-      }
-    }
-
-    img {
-      width: 20px;
-      height: 28px;
-      margin-left: 10px;
-    }
-  }
 
   .skills_con {
     display: flex;
@@ -66,20 +84,6 @@
   .active {
     background-color: $light_blue;
     border-color: #ffffff;
-  }
-
-  a {
-    display: block;
-    background-color: $light_blue;
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid #f8f9fa;
-    color: white;
-    margin: 20px auto 0;
-    // browser differentiation
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
   }
 }
 

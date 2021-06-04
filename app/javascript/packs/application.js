@@ -34,14 +34,17 @@ document.addEventListener('turbolinks:load', () => {
 
 
   let location_element = `
-    <p><strong>Tell us where you are</stong></p>
-    <div class="location_con">
-      <input type="text" placeholder="Insert location...">
-      <img src="assets/location.svg" alt="Loc">
-    </div>`
+    <div class="location_block">
+      <p><strong>Tell us where you are</stong></p>
+      <div class="location_con">
+        <input type="text" placeholder="Insert location...">
+        <img src="assets/location.svg" alt="Loc">
+      </div>
+    </div>
+    `
 
   let button_element = `
-    <a href="/spots">
+    <a id="homepage_button" href="/spots">
       Search the Ocean
     </a>`
   let buttonAdded = false
@@ -64,7 +67,8 @@ document.addEventListener('turbolinks:load', () => {
 
     if (value.length > 0 && !buttonAdded) {
       // add button
-      form.insertAdjacentHTML("beforeend", button_element);
+      const location_block = document.querySelector(".location_block")
+      location_block.insertAdjacentHTML("beforeend", button_element);
       buttonAdded = true
 
       // Add button eventListener
@@ -87,11 +91,17 @@ document.addEventListener('turbolinks:load', () => {
   const handleSkillClick = (ev) => {
     activateSkill(ev)
     if (location_element !== "") {
-      form.insertAdjacentHTML("beforeend", location_element);
-      location_element = ""
-      // add input listener
-      const input = form.querySelector("input")
-      input.addEventListener("keyup", ev => handleKeyUp(ev))
+      // remove skill pills when location block is added
+      setTimeout(function(){
+        form.remove()
+         // Add location element
+        const header = document.querySelector(".header")
+        header.insertAdjacentHTML("beforeend", location_element);
+        location_element = ""
+        // add input listener
+        const input = document.querySelector(".location_block input")
+        input.addEventListener("keyup", ev => handleKeyUp(ev))
+      }, 300);
     }
   }
 
