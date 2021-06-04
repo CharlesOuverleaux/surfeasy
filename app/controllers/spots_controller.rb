@@ -26,6 +26,7 @@ class SpotsController < ApplicationController
 
     @distance = params[:distance]
     @kpi = params[:kpi]
+    @image_id = params[:image_id]
   end
 
   private
