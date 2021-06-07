@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :reviews, only: [ :destroy ]
 
   get '/profile', to: 'profile#index'
-
+  get '/signout', to: 'profile#signout'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

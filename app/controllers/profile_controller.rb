@@ -4,4 +4,9 @@ class ProfileController < ApplicationController
     redirect_to root_path unless current_user
     @user = current_user
   end
+
+  def signout
+    sign_out current_user
+    redirect_to root_path
+  end
 end
