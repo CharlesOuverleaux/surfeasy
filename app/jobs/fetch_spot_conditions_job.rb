@@ -35,7 +35,6 @@ class FetchSpotConditionsJob < ApplicationJob
 
     return data
   end
-
   def in_kph(data,units)
     return data * 1.609 unless units['windSpeed'] == 'KPH'
 
