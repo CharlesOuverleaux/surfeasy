@@ -107,7 +107,6 @@ document.addEventListener('turbolinks:load', () => {
   pills.forEach((pill) => {
     pill.addEventListener("click", ev => handleSkillClick(ev))
   })
-
 });
 
 

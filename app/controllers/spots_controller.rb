@@ -26,6 +26,12 @@ class SpotsController < ApplicationController
 
     @distance = params[:distance]
     @kpi = params[:kpi]
+
+    # is favorite?
+    @is_favorite = false
+    current_user.favorites.each do |favorite|
+      @is_favorite = true if favorite.spot_id == @spot.id
+    end
     @image_id = params[:image_id]
   end
 
