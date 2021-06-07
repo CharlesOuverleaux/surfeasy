@@ -95,8 +95,10 @@ document.addEventListener('turbolinks:load', () => {
       const header = document.querySelector(".header")
       header.insertAdjacentHTML("beforeend", location_element)
       location_element = ""
-      // add input listener
+      // select input field
       const input = document.querySelector(".location_block input")
+      // focus and add event listener on the input
+      input.focus()
       input.addEventListener("keyup", ev => handleKeyUp(ev))
       }
     }
