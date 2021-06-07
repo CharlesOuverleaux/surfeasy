@@ -1,15 +1,4 @@
 <div class="show-spot-container flex flex-col items-stretch">
-  <div class="show-spot-header flex flex-row justify-between p-3 items-baseline">
-    <%= link_to root_path do %>
-      <h1 class="title">Surfeasy</h1>
-    <%end%>
-    <div class="socials flex flex-row items-center">
-      <%= render 'icons/heart' %>
-      <%= render 'icons/share' %>
-      <img src="/assets/profile_icon.png" alt="">
-    </div>
-
-  </div>
   <img src="<%="/assets/spots/mood/#{@image_id}.jpg"%>" alt="" id="spot-show-hero">
   <div class="flex flex-row justify-between mt-4 items-stretch" id="spot-show-details">
     <div class="info flex flex-col">

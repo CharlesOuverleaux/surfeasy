@@ -13,11 +13,10 @@
   </head>
 
   <body>
-    <!-- removed shared/navbar here-->
+    <% if  @header_show%>
+      <%= render 'shared/header', show_share: @header_share_show %>
+    <% end %>
     <%= render 'shared/flashes' %>
-
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
 </html>
