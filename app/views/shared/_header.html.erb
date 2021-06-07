@@ -1,0 +1,20 @@
+<div class="show-spot-header flex flex-row justify-between p-3 items-center">
+  <%= link_to root_path do %>
+    <h1 class="title">Surfeasy</h1>
+  <%end%>
+  <% if current_user %>
+    <div class="socials flex flex-row items-center">
+      <% if show_share %>
+        <%= render 'icons/heart' %>
+        <%= render 'icons/share' %>
+      <% end %>
+      <a href="/profile">
+        <img src="/assets/profile_icon.png" alt="">
+      </a>
+    </div>
+  <% else %>
+    <a href="/users/sign_in">
+      Sign up
+    </a>
+  <% end %>
+</div>

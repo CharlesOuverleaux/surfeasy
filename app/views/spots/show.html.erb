@@ -1,22 +1,8 @@
 <div class="show-spot-container flex flex-col items-stretch">
-  <div class="show-spot-header flex flex-row justify-between p-3 items-baseline">
-    <%= link_to root_path do %>
-    <h1 class="title">Surfeasy</h1>
-    <%end%>
-    <div class="socials flex flex-row items-center">
-      <%= simple_form_for [ @spot, Favorite.new ] do |f| %>
-        <%= button_tag type: 'submit', class:"border-0 bg-light" do %>
-          <%= render 'icons/heart', is_favorite: @is_favorite %>
-        <% end %>
-      <% end %>
-      <%= render 'icons/share' %>
-      <img src="/assets/profile_icon.png" alt="">
-    </div>
-  </div>
-  <img src="/assets/banner.jpg" alt="" id="spot-show-hero">
+  <img src="<%="/assets/spots/mood/#{@image_id}.jpg"%>" alt="" id="spot-show-hero">
   <div class="flex flex-row justify-between mt-4 items-stretch" id="spot-show-details">
     <div class="info flex flex-col">
-      <h2><%= @spot.name %></h2>
+      <h2><%= @spot.name.gsub('-', ' ').titlecase %></h2>
       <h4><%= @spot.country %></h4>
       <div class="ratings my-2"><%=raw '&#9733;' * @stars %><%=raw '&#9734;' * (5-@stars) %> (<%= @review_count %>)</div>
       <div id="spot-show-directions"><%= render 'icons/direction' %><%= @distance %> km</div>
@@ -25,69 +11,83 @@
       <div><%= @kpi %>% fit</div>
       <div class="condition-item flex flex-row justify-between items-baseline"><%= render 'icons/wave' %>
         <div><%= @conditions[:wave_height] %><span class="indicator">m</span>
+        </div>
+      </div>
+      <div class="condition-item flex flex-row justify-between items-baseline"><%= render 'icons/wind' %>
+        <div><%= @conditions[:wind_speed] %><span class="indicator">kph</span>
+        </div>
+      </div>
+       <div class="condition-item flex flex-row justify-between items-baseline"><%= render 'icons/period' %>
+        <div><%= @conditions[:period] %><span class="indicator">sec</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="goodtoknow" class="my-3">
+    <h3>Good to know</h3>
+    <div class="flex flex-col">
+      <div class="flex flex-row justify-between my-1">
+        <%= render 'icons/level' %>
+        <div class="indicator-title">Level</div>
+        <div class="description"><%= @spot.ability_level  %></div>
+      </div>
+       <div class="flex flex-row justify-between my-1">
+        <%= render 'icons/vibe' %>
+        <div class="indicator-title">Vibe</div>
+        <div class="description"><%= @spot.vibe  %></div>
+      </div>
+       <div class="flex flex-row justify-between my-1 items-start">
+        <%= render 'icons/access' %>
+        <div class="indicator-title">Access</div>
+        <div class="description"><%= @spot.access  %></div>
       </div>
     </div>
-    <div class="condition-item flex flex-row justify-between items-baseline"><%= render 'icons/wind' %>
-      <div><%= @conditions[:wind_speed] %><span class="indicator">kph</span>
+  </div>
+  <div id="spot-show-description" class="mt-4">
+    <h3>About <%= @spot.name.gsub('-', ' ').titlecase %></h3>
+    <p>
+      <%= @spot.description %>
+    </p>
+  </div>
+  <div id="spot-show-reviews">
+    <h3>Reviews:</h3>
+
+    <div>
+      <% @spot.reviews.each do |review| %>
+        <div class="review-card my-3 p-3 rounded-lg">
+          <div class="flex flex-row justify-between items-baseline">
+            <span><%= review.user.username %></span>
+            <div class="ratings my-2"><%=raw '&#9733;' * review.rating %><%=raw '&#9734;' * (5-review.rating) %></div>
+          </div>
+          <h4><%= review.title %> </h4>
+          <div class="mb-2"><%= review.description %> </div>
+          <% if current_user == review.user %>
+            <%= link_to "Remove",
+              review_path(review),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
+    <% if current_user %>
+      <%= simple_form_for [ @spot, Review.new ] do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :rating %>
+        <%= f.submit "Add review", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
   </div>
-  <div class="condition-item flex flex-row justify-between items-baseline"><%= render 'icons/period' %>
-    <div><%= @conditions[:period] %><span class="indicator">sec</span>
-  </div>
 </div>
-</div>
-</div>
-<div id="goodtoknow" class="my-3">
-<h3>Good to know</h3>
-<div class="flex flex-col">
-<div class="flex flex-row justify-between my-1">
-  <%= render 'icons/level' %>
-  <div class="indicator-title">Level</div>
-  <div class="description"><%= @spot.ability_level  %></div>
-</div>
-<div class="flex flex-row justify-between my-1">
-  <%= render 'icons/vibe' %>
-  <div class="indicator-title">Vibe</div>
-  <div class="description"><%= @spot.vibe  %></div>
-</div>
-<div class="flex flex-row justify-between my-1 items-start">
-  <%= render 'icons/access' %>
-  <div class="indicator-title">Access</div>
-  <div class="description"><%= @spot.access  %></div>
-</div>
-</div>
-</div>
-<div id="spot-show-description" class="mt-4">
-<h3>About <%= @spot.name %></h3>
-<p>
-<%= @spot.description %>
-</p>
-</div>
-<div id="spot-show-reviews">
-<h3>Reviews:</h3>
-<div>
-<% @spot.reviews.each do |review| %>
-<div class="review-card my-3 p-3 rounded-lg">
-  <div class="flex flex-row justify-between items-baseline">
-    <span><%= review.user.username %></span>
-    <div class="ratings my-2"><%=raw '&#9733;' * review.rating %><%=raw '&#9734;' * (5-review.rating) %></div>
-  </div>
-  <h4><%= review.title %> </h4>
-  <div class="mb-2"><%= review.description %> </div>
-  <% if current_user == review.user %>
-  <%= link_to "Remove",
-  review_path(review),
-  method: :delete,
-  data: { confirm: "Are you sure?" } %>
-  <% end %>
-</div>
-<% end %>
-</div>
-<%= simple_form_for [ @spot, Review.new ] do |f| %>
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :rating %>
-<%= f.submit "Add review", class: "btn btn-primary" %>
-<% end %>
-</div>
-</div>
+
+
+
+
+
+
+
+
+

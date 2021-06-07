@@ -71,11 +71,11 @@ document.addEventListener('turbolinks:load', () => {
       location_block.insertAdjacentHTML("beforeend", button_element);
 
       // Add button eventListener
-      const button = form.lastChild
+      const button = document.querySelector('#homepage_button')
       button.addEventListener("click", ev => {
         // get skill & location
-        const skill = form.querySelector(".active").innerText
-        const location = form.querySelector("input").value.trim()
+        const skill = document.querySelector(".active").innerText
+        const location = document.querySelector(".location_con input").value.trim()
         // Change link
         button.href=`/spots/?skill=${skill}&location=${location}`
       })
@@ -95,8 +95,10 @@ document.addEventListener('turbolinks:load', () => {
       const header = document.querySelector(".header")
       header.insertAdjacentHTML("beforeend", location_element)
       location_element = ""
-      // add input listener
+      // select input field
       const input = document.querySelector(".location_block input")
+      // focus and add event listener on the input
+      input.focus()
       input.addEventListener("keyup", ev => handleKeyUp(ev))
       }
     }
