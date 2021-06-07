@@ -70,17 +70,16 @@
               data: { confirm: "Are you sure?" } %>
           <% end %>
         </div>
-
-
       <% end %>
     </div>
-  <%= simple_form_for [ @spot, Review.new ] do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :rating %>
-    <%= f.submit "Add review", class: "btn btn-primary" %>
-  <% end %>
-
+    <% if current_user %>
+      <%= simple_form_for [ @spot, Review.new ] do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :rating %>
+        <%= f.submit "Add review", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
