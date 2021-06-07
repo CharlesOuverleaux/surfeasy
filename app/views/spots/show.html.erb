@@ -13,7 +13,7 @@
   <img src="<%="/assets/spots/mood/#{@image_id}.jpg"%>" alt="" id="spot-show-hero">
   <div class="flex flex-row justify-between mt-4 items-stretch" id="spot-show-details">
     <div class="info flex flex-col">
-      <h2><%= @spot.name %></h2>
+      <h2><%= @spot.name.gsub('-', ' ').titlecase %></h2>
       <h4><%= @spot.country %></h4>
       <div class="ratings my-2"><%=raw '&#9733;' * @stars %><%=raw '&#9734;' * (5-@stars) %> (<%= @review_count %>)</div>
       <div id="spot-show-directions"><%= render 'icons/direction' %><%= @distance %> km</div>
@@ -57,7 +57,7 @@
     </div>
   </div>
   <div id="spot-show-description" class="mt-4">
-    <h3>About <%= @spot.name %></h3>
+    <h3>About <%= @spot.name.gsub('-', ' ').titlecase %></h3>
     <p>
       <%= @spot.description %>
     </p>
