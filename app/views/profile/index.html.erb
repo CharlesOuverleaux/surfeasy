@@ -1,4 +1,8 @@
-<h2>Welcome <%= @user.username %>!</h2>
+<%= link_to root_path do %>
+  <h1 class="title">Surfeasy</h1>
+<%end%>
+
+<h3>Welcome <%= @user.username %>!</h3>
 <h6>E-Mail: <%= @user.email %></h6>
 <br>
 
@@ -9,6 +13,6 @@
   <li>Spot 3</li>
 </ul>
 
-<a id="btn-signout" href="signout">
+<a id="btn-signout" href="/signout">
   Sign out
 </a>

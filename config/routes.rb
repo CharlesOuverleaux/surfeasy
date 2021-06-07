@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [ :destroy ]
 
+  # profile routes
   get '/profile', to: 'profile#index'
   get '/signout', to: 'profile#signout'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
