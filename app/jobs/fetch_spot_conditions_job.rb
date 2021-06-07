@@ -23,16 +23,21 @@ class FetchSpotConditionsJob < ApplicationJob
     forecasts = data['data']['forecasts']
     units = data['units']
     return { weather: forecasts[0]['weather'],
-             wind_speed: forecasts[0]['wind']['speed'].to_i,
+             wind_speed: in_kph(forecasts[0]['wind']['speed'].to_i, units).to_i,
              wind_direction: forecasts[0]['wind']['direction'].to_i,
-             wave_height: standardize_units(forecasts[0]['surf']['max'], units).round(1),
+             wave_height: in_meters(forecasts[0]['surf']['max'], units).round(1),
              swell_direction: forecasts[0]['swells'][0]['direction'],
              period: forecasts[0]['swells'][0]['period'] }
   end
 
-  def standardize_units(data, units)
-    puts units
+  def in_meters(data, units)
     return data / 3.2808 unless units['swellHeight'] == 'M'
+
+    return data
+  end
+
+  def in_kph(data,units)
+    return data * 1.609 unless units['windSpeed'] == 'KPH'
 
     return data
   end
