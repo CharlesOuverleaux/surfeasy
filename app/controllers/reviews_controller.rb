@@ -10,13 +10,13 @@ class ReviewsController < ApplicationController
     review.spot = spot
     review.user = current_user
     review.save
-    redirect_to spot_path(spot)
+    redirect_to stored_location_for(:user)
   end
 
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to spot_path(@review.spot_id)
+    redirect_to stored_location_for(:user)
   end
 
   private
