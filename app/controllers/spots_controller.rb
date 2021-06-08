@@ -101,7 +101,7 @@ class SpotsController < ApplicationController
 
   def calculate_kpi(spot, level, current_conditions)
     # calculate kpi for a spot
-    # for now fake it with rand
+    # extract ideal condition data from spot instance
     ideal_conditions = {
       ideal_swell_direction: spot[:ideal_swell_direction].to_i,
       ideal_wind_direction: spot[:ideal_wind_direction].to_i
