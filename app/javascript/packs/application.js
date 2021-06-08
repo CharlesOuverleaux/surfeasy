@@ -146,26 +146,28 @@ document.addEventListener('turbolinks:load', () => {
       });
     }
 
-    const id = heartIcon.dataset.id
     heartIcon.addEventListener('click', async () => {
+      const id = heartIcon.dataset.id
       // add
       if (id === '-1') {
         let url = window.location.href.split('?')[0];
         url = `${url}/favorites`
-        await callAPI("POST", url)
+        const res = await callAPI("POST", url)
+        const data = await res.json()
+        heartIcon.classList.add("active")
+        heartIcon.dataset.id = data.id
         console.log("added to favorites")
       }
       //remove
       else {
         let url = `/favorites/${id}`
         await callAPI("DELETE", url)
+        heartIcon.classList.remove("active")
+        heartIcon.dataset.id = -1
         console.log("removed from favorites")
       }
-
-      // add/remove class ?!
     });
   }
-
 });
 
 

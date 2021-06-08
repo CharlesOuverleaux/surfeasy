@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
     favorite.spot = spot
     favorite.user = current_user
     favorite.save
-    redirect_to spot_path(spot)
+    render json: favorite
   end
 
   def destroy
