@@ -25,13 +25,10 @@ import { initTyped } from 'plugins/typed-js.js'
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-
+const initLandingPage = () => {
+  // trigger typed only on homepage
   const levelTyped = document.querySelector(".header p span")
   initTyped(levelTyped)
-
 
   let location_element = `
     <div class="location_block">
@@ -107,6 +104,34 @@ document.addEventListener('turbolinks:load', () => {
   pills.forEach((pill) => {
     pill.addEventListener("click", ev => handleSkillClick(ev))
   })
+}
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initSelect2();
+
+  const path = window.location.pathname
+
+  // landing page
+  if (path === "/") {
+    initLandingPage()
+  }
+
+  // show page -> assign share functionality
+  // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share
+  const shareIcon = document.querySelector("#share_icon")
+  if (shareIcon) {
+    shareIcon.addEventListener('click', async () => {
+      try {
+        await navigator.share({
+          url: window.location.href
+        })
+      } catch(err) {
+        console.log("Error sharing: " + err)
+      }
+    });
+  }
+
 });
 
 
