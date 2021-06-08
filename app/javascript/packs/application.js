@@ -146,6 +146,11 @@ document.addEventListener('turbolinks:load', () => {
       });
     }
 
+    // remove animation class -> no trigger when visiting first time
+    heartIcon.addEventListener("animationend", () => {
+      heartIcon.classList.remove("animate_selected")
+    })
+
     heartIcon.addEventListener('click', async () => {
       const id = heartIcon.dataset.id
       // add
@@ -154,7 +159,7 @@ document.addEventListener('turbolinks:load', () => {
         url = `${url}/favorites`
         const res = await callAPI("POST", url)
         const data = await res.json()
-        heartIcon.classList.add("active")
+        heartIcon.classList.add("active", "animate_selected")
         heartIcon.dataset.id = data.id
         console.log("added to favorites")
       }
@@ -162,7 +167,7 @@ document.addEventListener('turbolinks:load', () => {
       else {
         let url = `/favorites/${id}`
         await callAPI("DELETE", url)
-        heartIcon.classList.remove("active")
+        heartIcon.classList.remove("active", "animate_selected")
         heartIcon.dataset.id = -1
         console.log("removed from favorites")
       }
