@@ -35,7 +35,6 @@ const initLandingPage = () => {
       <p><strong>Tell us where you are</stong></p>
       <div class="location_con">
         <input type="text" placeholder="Insert location...">
-        <img src="assets/location.svg" alt="Loc">
       </div>
     </div>
     `
