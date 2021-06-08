@@ -6,8 +6,8 @@
 
 <div class="horizontal-scroll">
   <% @spots.each_with_index do |spot, index| %>
-    <div class="horizontal-scroll__block horizontal-scroll__block--purple">
-      <%= render 'components/spot-card', spot: spot, image_id: index > 9 ? rand(1..10) : index+1  %>
+    <div class="horizontal-scroll__block">
+      <%= render 'components/spot-card-swipe', spot: spot, image_id: index > 9 ? rand(1..10) : index+1  %>
     </div>
   <% end %>
 </div>
