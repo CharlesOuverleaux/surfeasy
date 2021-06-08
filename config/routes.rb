@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [ :new, :create ]
   end
   resources :reviews, only: [ :destroy ]
-
+  resources :favorites, only: [ :destroy ]
   # profile routes
   get '/profile', to: 'profile#index'
   get '/signout', to: 'profile#signout'

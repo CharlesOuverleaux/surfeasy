@@ -5,9 +5,17 @@
   <% if current_user %>
     <div class="socials flex flex-row items-center">
       <% if show_share %>
+        <% if @is_favorite %>
+          <%= simple_form_for @favorite, method: :delete do |f| %>
+            <%= button_tag type: 'submit', class:"border-0 bg-light" do %>
+              <%= render 'icons/heart', is_favorite: @is_favorite %>
+            <% end %>
+          <% end %>
+        <% else %>
          <%= simple_form_for [ @spot, Favorite.new ] do |f| %>
-          <%= button_tag type: 'submit', class:"border-0 bg-light" do %>
-            <%= render 'icons/heart', is_favorite: @is_favorite %>
+            <%= button_tag type: 'submit', class:"border-0 bg-light" do %>
+              <%= render 'icons/heart', is_favorite: @is_favorite %>
+            <% end %>
           <% end %>
         <% end %>
         <%= render 'icons/share' %>
