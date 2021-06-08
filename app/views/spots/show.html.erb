@@ -79,6 +79,10 @@
         <%= f.input :rating %>
         <%= f.submit "Add review", class: "btn btn-primary" %>
       <% end %>
+    <% else %>
+      <a href="/users/sign_in">
+        Sign up
+      </a>
     <% end %>
   </div>
 </div>
