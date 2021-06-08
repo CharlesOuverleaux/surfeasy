@@ -1,0 +1,8 @@
+<div class="container">
+  <h2 id="index-header">
+    <span class="surf-spot-count"><%= @spots.count %></span> surf spots around <span id="index-location"><%= @location %></span>
+  </h2>
+  <% @spots.each_with_index do |spot,index| %>
+    <%= render 'components/spot-card', spot: spot, image_id: index > 9 ? rand(1..10) : index+1  %>
+  <% end %>
+</div>

@@ -2,9 +2,14 @@
   <h2 id="index-header">
     <span class="surf-spot-count"><%= @spots.count %></span> surf spots around <span id="index-location"><%= @location %></span>
   </h2>
-  <% @spots.each_with_index do |spot,index| %>
-    <%= render 'components/spot-card', spot: spot, image_id: index > 9 ? rand(1..10) : index+1  %>
-  <% end %>
-
-
 </div>
+
+<div class="horizontal-scroll">
+  <% @spots.each_with_index do |spot, index| %>
+    <div class="horizontal-scroll__block horizontal-scroll__block--purple">
+      <%= render 'components/spot-card', spot: spot, image_id: index > 9 ? rand(1..10) : index+1  %>
+    </div>
+  <% end %>
+</div>
+
+

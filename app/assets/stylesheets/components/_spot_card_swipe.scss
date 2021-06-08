@@ -1,0 +1,121 @@
+$color-black: #2E2E2E;
+$color-gray: #FDFFFC;
+$color-purple: #52489C;
+$color-yellow: #ECC30B;
+$color-orange: #F37748;
+$color-blue: #4D9DE0;
+$color-green: #00BD9D;
+$color-pink: #FB9F89;
+
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-button {
+  width: 1px;
+  height: 1px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  overflow: hidden;
+  font-size: 1em;
+}
+
+.horizontal-scroll {
+  width: 100vh;
+  height: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: $color-black;
+  padding: 30px;
+  transform-origin: right top;
+  transform: rotate(-90deg) translate3d(0,-100vh,0);
+
+  > * {
+    transform-origin: left top;
+    transform: rotate(90deg) translate3d(0,calc(-100vh + 60px),0);
+  }
+
+  &__block {
+    width: calc(100vh - 60px);
+    height: calc(100vh - 60px);
+    background: $color-gray;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: no-repeat center center / cover;
+      opacity: .8;
+      background-blend-mode: luminosity;
+    }
+
+    .letter {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: auto;
+      bottom: auto;
+      left: 50%;
+      transform: translate3d(-50%,-50%,0);
+      font-weight: normal;
+      font-size: 12em;
+      font-family: 'Playfair Display', serif;
+      color: white;
+    }
+
+    &--purple {
+      .background {
+        background-color: $color-purple;
+      }
+    }
+
+    &--yellow {
+      .background {
+        background-color: $color-yellow;
+      }
+    }
+
+    &--orange {
+      .background {
+        background-color: $color-orange;
+      }
+    }
+
+    &--blue {
+      .background {
+        background-color: $color-blue;
+      }
+    }
+
+    &--green {
+      .background {
+        background-color: $color-green;
+      }
+    }
+
+    &--pink {
+      .background {
+        background-color: $color-pink;
+      }
+    }
+  }
+}
