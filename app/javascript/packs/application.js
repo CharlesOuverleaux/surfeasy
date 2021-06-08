@@ -12,7 +12,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
@@ -129,6 +128,41 @@ document.addEventListener('turbolinks:load', () => {
       } catch(err) {
         console.log("Error sharing: " + err)
       }
+    });
+  }
+
+  // add fav logic
+  const heartIcon = document.querySelector("#fav-button")
+  if (heartIcon) {
+
+    const callAPI = async (method, url) => {
+      const token = document.querySelector('meta[name="csrf-token"]').content
+      return fetch(url, {
+        method: method,
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': token
+        }
+      });
+    }
+
+    const id = heartIcon.dataset.id
+    heartIcon.addEventListener('click', async () => {
+      // add
+      if (id === '-1') {
+        let url = window.location.href.split('?')[0];
+        url = `${url}/favorites`
+        await callAPI("POST", url)
+        console.log("added to favorites")
+      }
+      //remove
+      else {
+        let url = `/favorites/${id}`
+        await callAPI("DELETE", url)
+        console.log("removed from favorites")
+      }
+
+      // add/remove class ?!
     });
   }
 
