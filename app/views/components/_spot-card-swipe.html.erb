@@ -4,31 +4,20 @@
       <div class="spot-kpi" style="background-color: rgba(255, 255, 255, 0.8);"><%= spot[:kpi] %> <span class="indicator">%</span></div>
       <div class="spot-distance"><%= spot[:distance] %> km</div>
     </div>
+
     <h3 class="spot-name"><%= spot[:data].name.gsub('-', ' ').titlecase %></h3>
-      <div class="spot-conditions">
-        <div class="wave-icons">
-          <%= render 'icons/wave' %>
-          <%= render 'icons/wind' %>
-          <%= render 'icons/period' %>
-        </div>
-        <div class="wave-metrics">
-          <%= spot[:wave_height] %> <span class="indicator">m</span>
-          <%= spot[:wind_speed] %> <span class="indicator">kph</span>
-          <%= spot[:period] %> <span class="indicator">s</span>
-        </div>
+    <div class="spacer"></div>
+    <div class="spot-information">
+      <div class="spot-conditions border-bottom border-white">
+          <div class="wave-conditions"><%= render 'icons/wave' %><%= spot[:wave_height] %>m</div>
+          <div class="wind-conditions"><%= render 'icons/wind' %><%= spot[:wind_speed] %>kph</div>
+          <div class="period-conditions"><%= render 'icons/period' %><%= spot[:period] %>s</div>
       </div>
 
       <div class="spot-weather">
-        <div class="weather-icon">
-          <%= render 'icons/water' %>
-          <%= render 'icons/weather/sunny' %>
-        </div>
-        <div class="weather-metrics"></div>
-          <%= rand(18..20) %> °c
-          <%= spot[:weather][:temperature] %> °c
+          <div class="water-weather"><%= render 'icons/water' %><%= rand(18..20) %> °c</div>
+          <div class="sun-weather"><%= render 'icons/weather/sunny' %><%= spot[:weather][:temperature] %> °c</div>
       </div>
-
-
-
+    </div>
   </div>
 <%end%>

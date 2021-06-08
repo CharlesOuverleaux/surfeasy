@@ -7,56 +7,77 @@
  flex-direction: column;
  align-items: center;
  postion: relative;
+ padding: 15px;
 }
 
 .spot-reco {
-  position: absolute;
-  top: 35px;
-  right:35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
 }
 
 .spot-name {
-  position: absolute;
-  top: 85px;
   color: white;
-
+  font-weight: bold;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
 }
 
+.spacer {
+  flex: 1;
+}
+
+.spot-information {
+  width: 100%;
+}
 
 .spot-conditions {
-  position: absolute;
-  bottom: 85px;
   color: white;
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 8px;
+}
+
+.wave-conditions {
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  border: 1px solid white;
+  align-items: center;
+  svg {
+    margin-bottom: 8px;
+  }
 }
 
-.wave-icons {
-  border: 1px solid white;
+.wind-conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  svg {
+    margin-bottom: 8px;
+  }
 }
 
-.wave-metrics {
-  border: 1px solid white;
+.period-conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  svg {
+    margin-bottom: 8px;
+  }
 }
 
 .spot-weather {
-  position: absolute;
-  bottom: 10px;
   color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid white;
-}
-
-.weather-icons {
-
-}
-
-.weather-metrics {
-
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 15px;
+  svg {
+    margin-right: 8px;
+  }
 }
 
 svg {
