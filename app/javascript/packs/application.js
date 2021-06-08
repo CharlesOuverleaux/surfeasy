@@ -12,7 +12,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
@@ -132,6 +131,48 @@ document.addEventListener('turbolinks:load', () => {
     });
   }
 
+  // add fav logic
+  const heartIcon = document.querySelector("#fav-button")
+  if (heartIcon) {
+
+    const callAPI = async (method, url) => {
+      const token = document.querySelector('meta[name="csrf-token"]').content
+      return fetch(url, {
+        method: method,
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': token
+        }
+      });
+    }
+
+    // remove animation class -> no trigger when visiting first time
+    heartIcon.addEventListener("animationend", () => {
+      heartIcon.classList.remove("animate_selected")
+    })
+
+    heartIcon.addEventListener('click', async () => {
+      const id = heartIcon.dataset.id
+      // add
+      if (id === '-1') {
+        let url = window.location.href.split('?')[0];
+        url = `${url}/favorites`
+        const res = await callAPI("POST", url)
+        const data = await res.json()
+        heartIcon.classList.add("active", "animate_selected")
+        heartIcon.dataset.id = data.id
+        console.log("added to favorites")
+      }
+      //remove
+      else {
+        let url = `/favorites/${id}`
+        await callAPI("DELETE", url)
+        heartIcon.classList.remove("active", "animate_selected")
+        heartIcon.dataset.id = -1
+        console.log("removed from favorites")
+      }
+    });
+  }
 });
 
 
