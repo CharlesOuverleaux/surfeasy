@@ -26,7 +26,7 @@ class FetchSpotConditionsJob < ApplicationJob
              wind_speed: in_kph(forecasts[0]['wind']['speed'].to_i, units).to_i,
              wind_direction: forecasts[0]['wind']['direction'].to_i,
              wave_height: in_meters(forecasts[0]['surf']['max'], units).round(1),
-             swell_direction: forecasts[0]['swells'][0]['direction'],
+             swell_direction: forecasts[0]['swells'][0]['direction'].to_i,
              period: forecasts[0]['swells'][0]['period'] }
   end
 
