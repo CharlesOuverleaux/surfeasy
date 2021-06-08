@@ -7,6 +7,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import { initAutocomplete } from '../plugins/algolia'
 
 Rails.start()
 Turbolinks.start()
@@ -93,6 +94,7 @@ const initLandingPage = () => {
       location_element = ""
       // select input field
       const input = document.querySelector(".location_block input")
+      initAutocomplete()
       // focus and add event listener on the input
       input.focus()
       input.addEventListener("keyup", ev => handleKeyUp(ev))
