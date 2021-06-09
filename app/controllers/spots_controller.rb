@@ -8,7 +8,7 @@ class SpotsController < ApplicationController
     update_cached_conditions
     @filters = parse_filter_params
     @spots = filtered_spots
-    @location = params[:location]
+    @city = @location.city
 
     add_current_spot_data
     sort_by_kpi
@@ -48,8 +48,8 @@ class SpotsController < ApplicationController
 
   def parse_filter_params
     # get lat long coordinates for query param location
-    coordinates = Geocoder.search(params[:location]).first.coordinates if params[:location]
-
+    @location = Geocoder.search(params[:location]).first if params[:location]
+    coordinates = @location.coordinates
     filters = { location: coordinates || [39.598, -9.070],
                 radius: params[:radius] || 30,
                 skill_level: params[:skill] }
