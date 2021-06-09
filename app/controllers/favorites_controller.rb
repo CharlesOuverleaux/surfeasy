@@ -9,11 +9,11 @@ class FavoritesController < ApplicationController
     favorite.spot = spot
     favorite.user = current_user
     favorite.save
-    redirect_to spot_path(spot)
+    render json: favorite
   end
 
   def destroy
-    @favorite = favorite.find(params[:id])
+    @favorite = Favorite.find(params[:id])
     @favorite.destroy
     redirect_to spot_path(@favorite.spot_id)
   end

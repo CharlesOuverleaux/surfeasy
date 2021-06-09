@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Surfeasy</title>
+    <title>Surfeasy - Find surf spots!</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta property="og:title" content="Surfeasy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="www.surf-easy.com" />
+    <meta property="og:image" content="<%= asset_url('cropped_banner.jpg') %>" />
+    <meta property="og:description" content="Help surfers find their best waves: anytime & anywhere!" />
 
+    <%= favicon_link_tag 'favicon.ico' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 

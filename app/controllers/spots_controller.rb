@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'json'
+require_relative '../../reco_model/secret_sauce'
 class SpotsController < ApplicationController
   before_action :set_spot, only: [:show]
 
@@ -7,7 +8,7 @@ class SpotsController < ApplicationController
     update_cached_conditions
     @filters = parse_filter_params
     @spots = filtered_spots
-    @location = params[:location]
+    @city = @location.city
 
     add_current_spot_data
     sort_by_kpi
@@ -16,7 +17,7 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @conditions = current_conditions(@spot)
-    #refactor later
+    # refactor later
     sum = 0
     @spot.reviews.each do |review|
       sum += review.rating
@@ -29,8 +30,12 @@ class SpotsController < ApplicationController
 
     # is favorite?
     @is_favorite = false
-    current_user.favorites.each do |favorite|
-      @is_favorite = true if favorite.spot_id == @spot.id
+
+    current_user&.favorites&.each do |favorite|
+      if favorite.spot_id == @spot.id
+        @is_favorite = true
+        @favorite = favorite
+      end
     end
     @image_id = params[:image_id]
   end
@@ -43,8 +48,8 @@ class SpotsController < ApplicationController
 
   def parse_filter_params
     # get lat long coordinates for query param location
-    coordinates = Geocoder.search(params[:location]).first.coordinates if(params[:location])
-
+    @location = Geocoder.search(params[:location]).first if params[:location]
+    coordinates = @location.coordinates
     filters = { location: coordinates || [39.598, -9.070],
                 radius: params[:radius] || 30,
                 skill_level: params[:skill] }
@@ -61,10 +66,11 @@ class SpotsController < ApplicationController
     @spots.map! do |spot|
       # get conditions for spot
       conditions = current_conditions(spot)
-
+      kpi, score_msg = calculate_kpi(spot, @filters[:skill_level], conditions)
       { data: spot,
         distance: spot.distance_from(@filters[:location]).round,
-        kpi: calculate_kpi(spot),
+        kpi: kpi,
+        score_msg: score_msg,
         wind_speed: conditions[:wind_speed],
         wave_height: conditions[:wave_height],
         period: conditions[:period],
@@ -96,10 +102,14 @@ class SpotsController < ApplicationController
     @spots.sort_by! { |spot| - spot[:kpi] }
   end
 
-  def calculate_kpi(_spot)
+  def calculate_kpi(spot, level, current_conditions)
     # calculate kpi for a spot
-    # for now fake it with rand
-    rand(100)
+    # extract ideal condition data from spot instance
+    ideal_conditions = {
+      ideal_swell_direction: spot[:ideal_swell_direction].to_i,
+      ideal_wind_direction: spot[:ideal_wind_direction].to_i
+    }
+    return calculate_score(level, ideal_conditions, current_conditions)
   end
 
   def update_cached_conditions
