@@ -2,6 +2,8 @@
   font-size: 1.5rem;
   .surf-spot-count {
     font-weight: 900;
+    color: orange;
+    font-size: 1.75rem;
   }
 }
 
@@ -11,4 +13,12 @@
   text-transform: capitalize;
 }
 
-
+#index-bg-shape {
+  position: fixed;
+  bottom: 30vh;
+  height: 35vh;
+  width: 300vw;
+  background-color: orange;
+  z-index: -4;
+  transform: translateX(-100vw) rotate(-30deg);
+}

@@ -33,12 +33,13 @@
 
 #homepage_button {
   display: block;
-  background-color: $light_blue;
-  padding: 10px;
+  background-color: orange;
+  padding: 10px 15px;
   border-radius: 8px;
-  border: 2px solid #f8f9fa;
+  border: 2px solid #f8f9fa20;
   color: white;
   margin: 20px auto 0;
+  font-weight: bold;
   // browser differentiation
   width: -webkit-fit-content;
   width: -moz-fit-content;
