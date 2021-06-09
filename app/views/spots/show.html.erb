@@ -8,7 +8,7 @@
       <div id="spot-show-directions"><%= render 'icons/direction' %><%= @distance %> km</div>
     </div>
     <div class="conditions flex flex-col items-end justify-even">
-      <div><%= @kpi %>% fit</div>
+      <div><%= @score_msg %> fit</div>
       <div class="condition-item flex flex-row justify-between items-baseline"><%= render 'icons/wave' %>
         <div><%= @conditions[:wave_height] %><span class="indicator">m</span>
         </div>

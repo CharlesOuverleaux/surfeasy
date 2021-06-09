@@ -26,7 +26,7 @@ class SpotsController < ApplicationController
     @stars = (sum / @review_count).round
 
     @distance = params[:distance]
-    @kpi = params[:kpi]
+    @score_msg = params[:score_msg]
 
     # is favorite?
     @is_favorite = false
