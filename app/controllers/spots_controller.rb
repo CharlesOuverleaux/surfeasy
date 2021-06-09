@@ -116,6 +116,6 @@ class SpotsController < ApplicationController
     # check if cached conditions are older than 30 mins
     created_at = $redis.get('created_at')
     # if they are, update them
-    FetchSpotConditionsJob.perform_later if created_at.nil? || created_at.to_i < Time.now.to_i - 1800
+    FetchSpotConditionsJob.perform_now if created_at.nil? || created_at.to_i < Time.now.to_i - 1800
   end
 end
