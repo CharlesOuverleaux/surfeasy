@@ -1,14 +1,18 @@
 // CARD DESIGN
 
 .spot-card {
- height: 78vh;
- width: 85vw;
- display: flex;
- flex-direction: column;
- align-items: center;
- postion: relative;
- padding: 15px;
- border-radius: 25px;
+  height: calc(100vh - 100px);
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 25px;
+  svg {
+    height: 35px;
+    width: auto;
+    color: white;
+  }
 }
 
 .spot-reco {
@@ -101,10 +105,13 @@
   }
 }
 
-svg {
-  height: 35px;
-  width: auto;
-  color: white;
+.swiper-slide {
+  transition-property: all !important;
+  transition: all 0.5s ease;
 }
-
-
+.swiper-slide-prev {
+  opacity: 0.5;
+}
+.swiper-slide-next {
+  opacity: 0.5;
+}
