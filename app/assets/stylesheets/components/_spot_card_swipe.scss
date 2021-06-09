@@ -1,7 +1,7 @@
 // CARD DESIGN
 
 .spot-card {
- height: 81vh;
+ height: 78vh;
  width: 90vw;
  display: flex;
  flex-direction: column;
@@ -127,7 +127,7 @@ svg {
     position: relative;
 
     &:not(:first-child) {
-      margin-top: 30px;
+      margin-top: 0px;
     }
 
     .background {
