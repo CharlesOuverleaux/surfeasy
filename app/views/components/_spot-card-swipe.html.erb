@@ -1,0 +1,23 @@
+<%= link_to spot_path(spot[:data], distance: spot[:distance], kpi: spot[:kpi], image_id: image_id)  do%>
+  <div class="spot-card" style="background-image: linear-gradient(0deg, rgba(2,0,36,0.9) 0%, rgba(9,9,121,0.3) 50%, rgba(9,9,121,0.1) 85%, rgba(2,0,36,0.5) 100%), url('<%="/assets/spots/mood/#{image_id}.jpg" %>'); background-size: cover;">
+    <div class="spot-reco">
+      <div class="spot-kpi"><%= spot[:kpi] %> <span class="indicator">%</span></div>
+      <div class="spot-distance"><%= spot[:distance] %> km</div>
+    </div>
+
+    <h3 class="spot-name"><%= spot[:data].name.gsub('-', ' ').titlecase %></h3>
+    <div class="spacer"></div>
+    <div class="spot-information">
+      <div class="spot-conditions border-bottom border-white">
+          <div class="wave-conditions"><%= render 'icons/wave' %><%= spot[:wave_height] %>m</div>
+          <div class="wind-conditions"><%= render 'icons/wind' %><%= spot[:wind_speed] %>kph</div>
+          <div class="period-conditions"><%= render 'icons/period' %><%= spot[:period] %>s</div>
+      </div>
+
+      <div class="spot-weather">
+          <div class="water-weather"><%= render 'icons/water' %><%= rand(18..20) %> °c</div>
+          <div class="sun-weather"><%= render 'icons/weather/sunny' %><%= spot[:weather][:temperature] %> °c</div>
+      </div>
+    </div>
+  </div>
+<%end%>

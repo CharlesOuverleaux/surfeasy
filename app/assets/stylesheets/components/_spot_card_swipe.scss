@@ -1,0 +1,163 @@
+// CARD DESIGN
+
+.spot-card {
+ height: 78vh;
+ width: 90vw;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ postion: relative;
+ padding: 15px;
+ border-radius: 25px;
+}
+
+.spot-reco {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.spot-kpi {
+  width: 100px;
+  border: 1px solid white;
+  border-radius: 5px 5px 0px 0px;
+  background-color: white;
+  color: black;
+}
+
+.spot-distance {
+  width: 100px;
+  border: 1px solid white;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.spot-name {
+  color: white;
+  font-weight: 500;
+  font-size: 50px;
+  font-family: roboto;
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.spot-information {
+  width: 100%;
+}
+
+.spot-conditions {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 8px;
+}
+
+.wave-conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  svg {
+    margin-bottom: 8px;
+  }
+}
+
+.wind-conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  svg {
+    margin-bottom: 8px;
+  }
+}
+
+.period-conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  svg {
+    margin-bottom: 8px;
+  }
+}
+
+.spot-weather {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 15px;
+  svg {
+    margin-right: 8px;
+  }
+}
+
+svg {
+  height: 35px;
+  width: auto;
+  color: white;
+}
+
+// HORIZONTAL SCROLL
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-button {
+  width: 1px;
+  height: 1px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.horizontal-scroll {
+  width: 100vh;
+  height: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #F8F8F8;
+  padding: 30px;
+  transform-origin: right top;
+  transform: rotate(-90deg) translate3d(0,-100vh,0);
+
+  > * {
+    transform-origin: left top;
+    transform: rotate(90deg) translate3d(0,calc(-100vh + 60px),0);
+  }
+
+  &__block {
+    width: 35vh;
+    height: 55vh;
+    background: #F8F8F8;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: 0px;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: no-repeat center center / cover;
+      opacity: .8;
+      background-blend-mode: luminosity;
+    }
+    }
+}
