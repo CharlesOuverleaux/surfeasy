@@ -5,7 +5,7 @@ INTERMEDIATE = 'INTERMEDIATE'
 ADVANCED = 'ADVANCED'
 
 def wave_height_score(wave_height, level)
-  if level == BEGINNER && wave_height < 1 ||
+  if level == BEGINNER && wave_height.between?(0.4, 1) ||
      level == INTERMEDIATE && wave_height.between?(0.5, 2) ||
      level == ADVANCED && wave_height > 0.5
     return 20
