@@ -1,13 +1,14 @@
-<div class="container">
-  <h2 id="index-header">
-    <span class="surf-spot-count"><%= @spots.count %></span> surf spots around <span id="index-location"><%= @city %></span>
-  </h2>
-</div>
-
-<div class="horizontal-scroll">
-  <% @spots.each_with_index do |spot, index| %>
-    <div class="horizontal-scroll__block">
-      <%= render 'components/spot-card-swipe', spot: spot, image_id: index > 9 ? rand(1..10) : index+1  %>
-    </div>
-  <% end %>
+<!-- Slider main container -->
+<div class="swiper-container">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <% @spots.each_with_index do |spot, index| %>
+      <div class="swiper-slide">
+        <div class="flex flex-col items-center">
+          <%= render 'components/spot-card-swipe', spot: spot, image_id: index > 9 ? rand(1..10) : index+1  %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

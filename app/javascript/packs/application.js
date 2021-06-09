@@ -21,6 +21,7 @@ ActiveStorage.start();
 // External imports
 import "bootstrap";
 import { initTyped } from "plugins/typed-js.js";
+import { initSwiper } from "plugins/swiper";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -56,8 +57,6 @@ const initLandingPage = () => {
     // add active to selected
     ev.currentTarget.classList.add("active");
   };
-
-
 
   const handleKeyUp = (ev) => {
     const value = ev.currentTarget.value.trim();
@@ -119,6 +118,9 @@ document.addEventListener("turbolinks:load", () => {
   // landing page
   if (path === "/") {
     initLandingPage();
+  }
+  if (path === "/spots/") {
+    initSwiper();
   }
 
   // show page -> assign share functionality
