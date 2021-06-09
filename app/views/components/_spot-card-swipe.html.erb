@@ -1,7 +1,7 @@
 <%= link_to spot_path(spot[:data], distance: spot[:distance], kpi: spot[:kpi], image_id: image_id)  do%>
   <div class="spot-card" style="background-image: linear-gradient(0deg, rgba(2,0,36,0.9) 0%, rgba(9,9,121,0.3) 50%, rgba(9,9,121,0.1) 85%, rgba(2,0,36,0.5) 100%), url('<%="/assets/spots/mood/#{image_id}.jpg" %>'); background-size: cover;">
     <div class="spot-reco">
-      <div class="spot-kpi" style="background-color: rgba(255, 255, 255, 0.8);"><%= spot[:kpi] %> <span class="indicator">%</span></div>
+      <div class="spot-kpi"><%= spot[:kpi] %> <span class="indicator">%</span></div>
       <div class="spot-distance"><%= spot[:distance] %> km</div>
     </div>
 
