@@ -7,7 +7,14 @@
             "spot_name": "agucadoura",
             "latitude": 41.432386,
             "longitude": -8.789592,
-            "description": ""
+            "description": "Agucadoura in North Portugal is an exposed beach break that has fairly consistent surf and can work at any time of the year. Works best in offshore winds from the east. Windswells and groundswells in equal measure and the ideal swell direction is from the west.. Good surf at all stages of the tide",
+            "Swell Direction": 270,
+            "Wind": 45,
+            "Surf Height": "Waist high to double overhead.",
+            "Tide": "All tides",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Super friendly locals",
+            "Access": "Big parking nearby, also possible to park on the side of the road"
         },
         {
             "country": "Portugal",
@@ -15,7 +22,14 @@
             "spot_name": "mindelo",
             "latitude": 41.3116168,
             "longitude": -8.74003,
-            "description": ""
+            "description": "Mindelo in North Portugal is an exposed beach break that has fairly consistent surf and can work at any time of the year. Works best in offshore winds from the east. Windswells and groundswells in equal measure and the ideal swell direction is from the west.. Good surf at all stages of the tide",
+            "Swell Direction": 270,
+            "Wind": 25,
+            "Surf Height": "Waist high to double overhead.",
+            "Tide": "All tides",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Super friendly locals",
+            "Access": "Big parking nearby, also possible to park on the side of the road"
         },
         {
             "country": "Portugal",
@@ -23,7 +37,14 @@
             "spot_name": "azurara",
             "latitude": 41.3339,
             "longitude": -8.7412,
-            "description": ""
+            "description": "Mindelo in North Portugal is an exposed beach break that has fairly consistent surf and can work at any time of the year. Works best in offshore winds from the east. Windswells and groundswells in equal measure and the ideal swell direction is from the west.. Good surf at all stages of the tide",
+            "Swell Direction": 270,
+            "Wind": 25,
+            "Surf Height": "Waist high to double overhead.",
+            "Tide": "All tides",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Super friendly locals",
+            "Access": "Big parking nearby, also possible to park on the side of the road"
         },
         {
             "country": "Portugal",
@@ -31,7 +52,14 @@
             "spot_name": "leca",
             "latitude": 41.189834,
             "longitude": -8.711711,
-            "description": ""
+            "description": "Leca in North Portugal is an exposed beach break that has fairly consistent surf and can work at any time of the year. Works best in offshore winds from the east. Windswells and groundswells in equal measure and the ideal swell direction is from the west.. Good surf at all stages of the tide",
+            "Swell Direction": 270,
+            "Wind": 25,
+            "Surf Height": "Waist high to double overhead.",
+            "Tide": "All tides",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Super friendly locals",
+            "Access": "Big parking nearby, also possible to park on the side of the road"
         },
         {
             "country": "Portugal",
@@ -51,10 +79,17 @@
         {
             "country": "Portugal",
             "surfline_id": "602d5f7ba393ff3687f098ae",
-            "spot_name": "p-voa-do-varzim",
+            "spot_name": "Povoa de Varzim",
             "latitude": 41.3847,
             "longitude": -8.777,
-            "description": ""
+            "Swell Direction": 270,
+            "Wind": 45,
+            "Surf Height": "Waist high to double overhead.",
+            "Tide": "High Tide",
+            "description": "Povoa do Varzim in North Portugal is an exposed beach and reef break that has fairly consistent surf and can work at any time of the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Nice, friendly",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -77,7 +112,7 @@
             "description": "While surfed sporadically earlier, the world's biggest, baddest, most oversized wedge, Nazar\u00e9 took center stage in the big wave world after Garrett MacNamara was invited there to \"surf the world's biggest wave\" in 2011. Since then, Nazar\u00e9 has become a household name, one of Portugal's main coastal tourist attractions, a (former) stop on the Big Wave World Tour, and ground zero for big wave tow surfing. On the days when the offshore canyon isn't focusing huge swells into 80-foot peaks, Nazar\u00e9's inside sand bar produces heavy, hollow tubes in sizes that mortals can appreciate (as long as those mortals are barrel-riding experts).",
             "Ability Level": "Advanced",
             "Local Vibe": "Welcoming",
-            "Access": "Drive from Lisbon to the town of Nazar\u00e9, arrange a jet ski, and access the wave via the harbor. On smaller days, paddle out at Praia do Norte."
+            "Access": "Drive from Lisbon to the town of Nazare, arrange a jet ski, and access the wave via the harbor. On smaller days, paddle out at Praia do Norte."
         },
         {
             "country": "Portugal",
@@ -85,7 +120,13 @@
             "spot_name": "belgas",
             "latitude": 39.40597094258713,
             "longitude": -9.267766975532595,
-            "description": ""
+            "Swell Direction": 5,
+            "Wind": 70,
+            "Surf Height": "Waiste high to overhead",
+            "description": "Belgas in Peniche is a beach break that has very reliable surf and works all around the year. Offshore winds blow from the southeast. Most of the surf here comes from groundswells and the best swell direction is from the north. Rarely crowded here.",
+            "Ability Level": "Advanced",
+            "Local Vibe": "Welcoming",
+            "Access": "Parking available"
         },
         {
             "country": "Portugal",
@@ -108,7 +149,14 @@
             "spot_name": "cerro",
             "latitude": 39.3634,
             "longitude": -9.3685,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -176,7 +224,14 @@
             "spot_name": "consolacao",
             "latitude": 39.327822,
             "longitude": -9.360496,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -184,7 +239,14 @@
             "spot_name": "s-o-martinho-do-porto",
             "latitude": 39.504082393067776,
             "longitude": -9.14408,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -192,7 +254,14 @@
             "spot_name": "sao-lourenco",
             "latitude": 39.0132,
             "longitude": -9.424,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -200,7 +269,14 @@
             "spot_name": "praia-das-ma-s",
             "latitude": 38.8268,
             "longitude": -9.472,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -208,7 +284,14 @@
             "spot_name": "praia-pequena",
             "latitude": 38.819701,
             "longitude": -9.474986,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -231,7 +314,14 @@
             "spot_name": "praia-grande-south-side",
             "latitude": 38.81416486985497,
             "longitude": -9.47821855545044,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -254,7 +344,14 @@
             "spot_name": "cave",
             "latitude": 38.99644075470778,
             "longitude": -9.426644783081088,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -382,7 +479,14 @@
             "spot_name": "tricana-carcavelos",
             "latitude": 38.67888628330552,
             "longitude": -9.336898985705602,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -405,7 +509,14 @@
             "spot_name": "calhau-carcavelos",
             "latitude": 38.67777156706033,
             "longitude": -9.332765561298743,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -413,7 +524,14 @@
             "spot_name": "paco-de-arcos",
             "latitude": 38.689118,
             "longitude": -9.29619,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -429,7 +547,14 @@
             "spot_name": "estoril",
             "latitude": 38.699432,
             "longitude": -9.394559,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -453,7 +578,14 @@
             "spot_name": "praia-do-pego",
             "latitude": 38.29512369,
             "longitude": -8.78031,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -461,7 +593,14 @@
             "spot_name": "sines",
             "latitude": 37.974892,
             "longitude": -8.873202,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -474,9 +613,9 @@
             "Surf Height": "Waist to double overhead.",
             "Tide": "All tides",
             "description": "This sandy alcove, sandwiched between two, long, rocky groynes, looks across to Lisbon from the southern fringe of the Tejo / Tagus rivermouth. When a big swell hits, the accumulated sand throws up powerful, short, wedgy waves popular with a loyal bodyboarding crew. There is a right breaking off the northern groyne, as well as a left to the south. The waves are hollow and heavy. The swell angle is important as the rivermouth can cut out some of the size.",
-            "Ability Level": "Intermediate - Advanced",
-            "Local Vibe": "Doable",
-            "Access": "Small, beach front car park, plus another set back from the beach."
+            "Ability Level": "All abilities",
+            "Local Vibe": "Nice, but it can get pushy when crowded",
+            "Access": "Small parking next to the beach, but you can also find a parking 5min walking distance from there"
         },
         {
             "country": "Portugal",
@@ -484,7 +623,14 @@
             "spot_name": "marcelino",
             "latitude": 38.648843,
             "longitude": -9.246702,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Close to Lisbon, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -492,7 +638,14 @@
             "spot_name": "praia-do-barbas",
             "latitude": 38.644758,
             "longitude": -9.242464,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Close to Lisbon (other side of the bridge). Right next to costa da capreica, first beach arriving from the Lisbon highway. This is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -500,7 +653,14 @@
             "spot_name": "costa-da-caparica",
             "latitude": 38.64036,
             "longitude": -9.24275,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -523,7 +683,14 @@
             "spot_name": "praia-da-cornelia",
             "latitude": 38.62753236844342,
             "longitude": -9.227517441803002,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -531,7 +698,14 @@
             "spot_name": "praia-da-rainha",
             "latitude": 38.616,
             "longitude": -9.2192,
-            "description": ""
+            "Swell Direction": 5,
+            "Wind": 180,
+            "Surf Height": "Small to waist",
+            "Tide": "All tides",
+            "description": "This is a small beach (in a creek) in Cascais, it can work when the swells are too big on the other side of Cascais.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance, easy access from Lisbon center (Cascais station)"
         },
         {
             "country": "Portugal",
@@ -554,7 +728,14 @@
             "spot_name": "sao-torpes",
             "latitude": 37.92593668072974,
             "longitude": -8.808165192604065,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -562,7 +743,14 @@
             "spot_name": "portinho-da-arrabida",
             "latitude": 38.469197,
             "longitude": -8.98487,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -570,7 +758,14 @@
             "spot_name": "malhao",
             "latitude": 37.786679,
             "longitude": -8.806232,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -578,7 +773,14 @@
             "spot_name": "zambujeria-do-mar",
             "latitude": 37.5238,
             "longitude": -8.7902,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -586,7 +788,14 @@
             "spot_name": "odeceixe",
             "latitude": 37.442967,
             "longitude": -8.804675,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -609,7 +818,14 @@
             "spot_name": "praia-castelejo",
             "latitude": 37.1006,
             "longitude": -8.9466,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -662,7 +878,14 @@
             "spot_name": "praia-do-amado",
             "latitude": 37.16575436072872,
             "longitude": -8.903753757476807,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -670,7 +893,14 @@
             "spot_name": "vale-figueiras",
             "latitude": 37.2485,
             "longitude": -8.871,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -708,7 +938,14 @@
             "spot_name": "tonel",
             "latitude": 37.006831,
             "longitude": -8.952636,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -776,7 +1013,14 @@
             "spot_name": "praia-dos-salgados",
             "latitude": 37.096892,
             "longitude": -8.3479,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -844,7 +1088,14 @@
             "spot_name": "ilha-do-farol",
             "latitude": 36.972289,
             "longitude": -7.862803,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         }
     ]
 }
