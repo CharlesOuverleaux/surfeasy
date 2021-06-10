@@ -3,6 +3,7 @@ solution:
   1. rails c
   2. FetchSpotConditionsJob.perform_now
 
+
 error: js not loading => typed not working
 solution:
   1. delete yarn.lock
@@ -11,3 +12,12 @@ solution:
     1. rake assets:clobber
     2. rake tmp:clear
     3. yarn install
+
+
+#########################
+####### NOTES ###########
+#########################
+
+MAPS DIRECTIONS:
+https://developers.google.com/maps/documentation/urls/get-started#directions-action
+-> https://www.google.com/maps/dir/?api=1&origin=Porto,Portugal&destination=41.2842778,-8.7907839&travelmode=driving
