@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   # profile routes
   get '/profile', to: 'profile#index'
   get '/signout', to: 'profile#signout'
+  # footer routes
+  get '/team', to: 'pages#team'
+  get '/about', to: 'pages#about'
+  get '/donate', to: 'pages#donate'
 end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
