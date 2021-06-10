@@ -4,13 +4,16 @@
       <h2><%= @spot.name.gsub('-', ' ').titlecase %></h2>
       <h4><%= @spot.country %></h4>
     </div>
-    <div class="spot-kpi"><%= @score_msg %></div>
+    <div class="spot-reco">
+      <div class="spot-kpi"><%= @score_msg %> <span class="indicator"></span></div>
+      <div class="spot-distance"><%= @distance %> km away</div>
+    </div>
   </div>
   <div class="flex flex-row justify-between mt-4 items-stretch mx-2" id="spot-show-details">
     <div class="info">
       <div class="ratings"><span class="filled-star"><%=raw '&#9733;' * @stars %></span><span class="unfilled-star"><%=raw '&#9734;' * (5-@stars) %></span> (<%= @review_count %> reviews)</div>
       <a href="https://www.google.com/maps/dir/?api=1&origin=<%= @origin[0] %>,<%= @origin[1] %>&destination=<%= @spot.lat %>,<%= @spot.lon %>&travelmode=driving" target="_blank" >
-        <div id="spot-show-directions"><%= render 'icons/direction' %><%= @distance %> km - Take me there</div>
+        <div id="spot-show-directions"><%= render 'icons/direction' %> <span style="font-weight: 500;">Take me there</span></div>
       </a>
     </div>
     <div class="conditions flex flex-col items-stretch justify-even">
