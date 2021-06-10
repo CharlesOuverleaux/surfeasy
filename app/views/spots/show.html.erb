@@ -9,7 +9,9 @@
   <div class="flex flex-row justify-between mt-4 items-stretch mx-2" id="spot-show-details">
     <div class="info">
       <div class="ratings"><span class="filled-star"><%=raw '&#9733;' * @stars %></span><span class="unfilled-star"><%=raw '&#9734;' * (5-@stars) %></span> (<%= @review_count %> reviews)</div>
-      <div id="spot-show-directions"><%= render 'icons/direction' %><%= @distance %> km - Take me there</div>
+      <a href="https://www.google.com/maps/search/?api=1&query=<%= @spot.lat %>,<%= @spot.lon %>" target="_blank" >
+        <div id="spot-show-directions"><%= render 'icons/direction' %><%= @distance %> km - Take me there</div>
+      </a>
     </div>
     <div class="conditions flex flex-col items-stretch justify-even">
 
