@@ -22,7 +22,7 @@
     <% @spots.each_with_index do |spot, index| %>
       <div class="swiper-slide">
         <div class="flex flex-col items-center">
-          <%= render 'components/spot-card-swipe', spot: spot, image_id: index > 9 ? rand(1..10) : index+1  %>
+          <%= render 'components/spot-card-swipe', spot: spot, image_id: index > 9 ? rand(1..10) : index+1, origin: @coordinates %>
         </div>
       </div>
     <% end %>
