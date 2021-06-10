@@ -9,27 +9,23 @@
   <div class="flex flex-row justify-between mt-4 items-stretch mx-2" id="spot-show-details">
     <div class="info">
       <div class="ratings"><span class="filled-star"><%=raw '&#9733;' * @stars %></span><span class="unfilled-star"><%=raw '&#9734;' * (5-@stars) %></span> (<%= @review_count %> reviews)</div>
-      <a href="https://www.google.com/maps/search/?api=1&query=<%= @spot.lat %>,<%= @spot.lon %>" target="_blank" >
+      <a href="https://www.google.com/maps/dir/?api=1&origin=<%= @origin[0] %>,<%= @origin[1] %>&destination=<%= @spot.lat %>,<%= @spot.lon %>&travelmode=driving" target="_blank" >
         <div id="spot-show-directions"><%= render 'icons/direction' %><%= @distance %> km - Take me there</div>
       </a>
     </div>
     <div class="conditions flex flex-col items-stretch justify-even">
-
       <div class="condition-item flex flex-row justify-between items-baseline">
         <div><%= @conditions[:wave_height] %><span class="indicator"> m</span>
-
         </div>
         <%= render 'icons/wave' %>
       </div>
       <div class="condition-item flex flex-row justify-between items-baseline">
         <div><%= @conditions[:wind_speed] %><span class="indicator"> kph</span>
-
         </div>
         <%= render 'icons/wind' %>
       </div>
       <div class="condition-item flex flex-row justify-between items-baseline">
         <div><%= @conditions[:period] %><span class="indicator"> sec</span>
-
         </div>
         <%= render 'icons/period' %>
       </div>

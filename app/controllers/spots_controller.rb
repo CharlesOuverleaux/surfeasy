@@ -27,6 +27,7 @@ class SpotsController < ApplicationController
 
     @distance = params[:distance]
     @score_msg = params[:score_msg]
+    @origin = params[:origin]
 
     # is favorite?
     @is_favorite = false
@@ -49,8 +50,8 @@ class SpotsController < ApplicationController
   def parse_filter_params
     # get lat long coordinates for query param location
     @location = Geocoder.search(params[:location]).first if params[:location]
-    coordinates = @location.coordinates
-    filters = { location: coordinates || [39.598, -9.070],
+    @coordinates = @location.coordinates
+    filters = { location: @coordinates || [39.598, -9.070],
                 radius: params[:radius] || 30,
                 skill_level: params[:skill] }
     return filters

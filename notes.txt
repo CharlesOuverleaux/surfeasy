@@ -2,3 +2,22 @@ error: Spots controller - calculate_score
 solution:
   1. rails c
   2. FetchSpotConditionsJob.perform_now
+
+
+
+
+
+
+
+
+
+
+
+
+#########################
+####### NOTES ###########
+#########################
+
+MAPS DIRECTIONS:
+https://developers.google.com/maps/documentation/urls/get-started#directions-action
+-> https://www.google.com/maps/dir/?api=1&origin=Porto,Portugal&destination=41.2842778,-8.7907839&travelmode=driving
