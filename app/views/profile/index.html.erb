@@ -3,12 +3,13 @@
 <br>
 
 <h3>Your favourites</h3>
-<ul>
-  <li>Spot 1</li>
-  <li>Spot 2</li>
-  <li>Spot 3</li>
-</ul>
-
-<a id="btn-signout" href="/signout">
+  <div id="favorite-cards">
+    <% @user.favorites.each do |favorite| %>
+    <div class="favorite-card" style="background-image: linear-gradient(0deg, rgba(2,0,36,0.9) 0%, rgba(9,9,121,0.1) 50%, rgba(9,9,121,0.1) 65%, rgba(2,0,36,0.5) 100%), url('<%="/assets/spots/mood/#{rand(1..10)}.jpg" %>'); background-size: cover;">
+      <h3 class="favorite-title"><%= favorite.spot.name %></h3>
+    </div>
+    <% end %>
+  </div>
+<a id="btn-signout" href="/signout" style="display: inline-block;">
   Sign out
 </a>
