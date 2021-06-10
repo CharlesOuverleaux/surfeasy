@@ -9,10 +9,11 @@
   padding: 15px;
   border-radius: 25px;
   svg {
-    height: 35px;
-    width: auto;
+    height: 30px;
+    width: 30px;
     color: white;
   }
+
 }
 
 .spot-reco {
@@ -29,6 +30,7 @@
 .spot-kpi {
   width: 100px;
   border: 1px solid white;
+  font-size: 1.15rem;
   border-radius: 5px 5px 0px 0px;
   background-color: white;
   color: black;
@@ -36,14 +38,17 @@
 
 .spot-distance {
   width: 100px;
+  font-weight: 400;
+  font-size: 14px;
   border: 1px solid white;
+  padding: 3px;
   border-radius: 0px 0px 5px 5px;
 }
 
 .spot-name {
   color: white;
   font-weight: 900;
-  font-size: 2.5rem;
+  font-size: 9vw;
   margin-top: 30px;
   display: flex;
   align-items: flex-start;
