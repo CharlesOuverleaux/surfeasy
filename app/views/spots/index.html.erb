@@ -2,7 +2,18 @@
   <h2 id="index-header">
     <span class="surf-spot-count"><%= @spots.count %></span> surf spots around <span id="index-location"><%= @city %></span>
   </h2>
-
+  <!--
+  <div  class="flex flex-row justify-even">
+    <div>
+      <span>Level: </span>
+      <span><%= @filters[:skill_level]%></span>
+    </div>
+    <div>
+      <span>Radius: </span>
+      <span><%= @filters[:radius]%> km</span>
+    </div>
+  </div>
+  -->
 </div>
 <div class="swiper-container">
   <!-- Additional required wrapper -->
