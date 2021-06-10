@@ -2,3 +2,12 @@ error: Spots controller - calculate_score
 solution:
   1. rails c
   2. FetchSpotConditionsJob.perform_now
+
+error: js not loading => typed not working
+solution:
+  1. delete yarn.lock
+  2. delete node_modules
+  3. run commands in terminal
+    1. rake assets:clobber
+    2. rake tmp:clear
+    3. yarn install
