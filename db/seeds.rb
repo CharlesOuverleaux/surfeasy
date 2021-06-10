@@ -56,7 +56,7 @@ puts "\nStart seeding"
 
 # seeding admin user & fake users
 admin = User.new(
-  username: 'admin',
+  username: 'Charles',
   password: '123456',
   email: 'admin@surf-easy.com')
 admin.save
