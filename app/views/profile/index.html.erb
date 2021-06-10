@@ -4,9 +4,9 @@
 
 <h3>Your favourites</h3>
 <ul>
-  <li>Spot 1</li>
-  <li>Spot 2</li>
-  <li>Spot 3</li>
+  <% @user.favorites.each do |favorite| %>
+  <li><%= favorite.spot.name %></li>
+  <% end %>
 </ul>
 
 <a id="btn-signout" href="/signout">
