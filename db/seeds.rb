@@ -1,9 +1,35 @@
 require 'json'
 require 'faker'
 
-REVIEW_TITLE = ['Amazing surf spot!','Great spot', 'My favorite place to surf', 'Perfect waves here', 'One of the best wave of the country','Bro! A fun place with a great vibe', 'Easy access and paddle out, perfect to get started', 'Beautiful waves with nice barrels', 'Perfect waves breaking in an ideal bay with crystal water','Search no more, this is THE spot', 'great-shaped waves with room to move', 'Awesome spot', 'Great waves her!', 'Loved to surf here' ]
-REVIEW_DESCRIPTION = ['the lineups here are still undiscovered and uncrowded, go surf it broo', 'Wake up before sunrise and wander down to the beach. Head off to surf empty glassy warm waves with a few mates. Grab a quick siesta after lunch before the afternoon then go surf again. Finish the day with spectacular sunsets. Repeat: every day!"','world-class waves, park above the cliff and walk down the second path at the beach. Best to be there before 10am before all the surf school arriving', 'Have a coffee and a pastel de nata, then jump straight into this right hander, be careful of the rocks on the left side of the beach', 'This is spot has three waves in one, if you are just starting you go easily go to the spot on the right there is no line-up','This is a really popular spot with good facilties including showers and a beach bar to boot.','Many pro surfers here, come early or try to avoid the crowds','fantastically flexible, crescent shaped beach that curves towards the town. Long, sometimes hollow rights can peel here. Consistent and fun, popular with beginners when small. Great place to party after a fun surf', 'You might meet the quatro local legends here, they come to surf quite often. Rumors said they became millionairs after developing a surf app', 'Nice place to eat, surf, relax and repeat!','
-you cant stop the waves, but you can learn how to surf this amazing spot, its lit man','In doubt paddle out, thats the way you should surf there! Be careful of the strong currents, many tourists have to be rescued by lifeguards','glassy waves, super nice to surf here on the right side', 'Wow loved it so much here, the locals are great, the vibe in the water is amazing','this is a great spot with nice access to the beach and restaurants around to refill you with good energy']
+REVIEW_TITLE = ['Amazing surf spot!',
+  'Great spot', 
+  'My favorite place to surf', 
+  'Perfect waves here', 
+  'One of the best wave of the country',
+  'Bro! A fun place with a great vibe', 
+  'Easy access and paddle out, perfect to get started', 
+  'Beautiful waves with nice barrels', 
+  'Perfect waves breaking in an ideal bay with crystal water',
+  'Search no more, this is THE spot', 
+  'Great-shaped waves with room to move', 
+  'Awesome spot', 
+  'Great waves here!', 
+  'Loved to surf here' ]
+REVIEW_DESCRIPTION = ['the lineups here are still undiscovered and uncrowded, go surf it broo', 
+  'Wake up before sunrise and wander down to the beach. Head off to surf empty glassy warm waves with a few mates. Grab a quick siesta after lunch before the afternoon then go surf again. Finish the day with spectacular sunsets. Repeat: every day!',
+  'world-class waves, park above the cliff and walk down the second path at the beach. Best to be there before 10am before all the surf school arriving', 
+  'Have a coffee and a pastel de nata, then jump straight into this right hander, be careful of the rocks on the left side of the beach',
+  'This is spot has three waves in one, if you are just starting you go easily go to the spot on the right there is no line-up',
+  'This is a really popular spot with good facilties including showers and a beach bar to boot.',
+  'Many pro surfers here, come early or try to avoid the crowds',
+  'fantastically flexible, crescent shaped beach that curves towards the town. Long, sometimes hollow rights can peel here. Consistent and fun, popular with beginners when small. Great place to party after a fun surf', 
+  'You might meet the quatro local legends here, they come to surf quite often. Rumors said they became millionairs after developing a surf app', 
+  'Nice place to eat, surf, relax and repeat!',
+  'Valentina, amazing lifeguard saved my life here! Great spot',
+  'you cant stop the waves, but you can learn how to surf this amazing spot, its lit man',
+  'In doubt paddle out, thats the way you should surf there! Be careful of the strong currents, many tourists have to be rescued by lifeguards',
+  'glassy waves, super nice to surf here on the right side', 'Wow loved it so much here, the locals are great, the vibe in the water is amazing',
+  'this is a great spot with nice access to the beach and restaurants around to refill you with good energy']
 
 # method to create random reviews and assign it to a spot
 def assign_random_review(spot)
