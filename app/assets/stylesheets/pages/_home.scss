@@ -122,3 +122,25 @@
 .ap-footer {
   display: none;
 }
+
+
+// FOOTER
+footer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-evenly;
+
+  a {
+    color: #afafaf;
+  }
+
+}
+
+
+
+
+
+
