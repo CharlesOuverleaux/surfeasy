@@ -1,25 +1,35 @@
 <div class="show-spot-container flex flex-col items-stretch">
-  <img src="<%="/assets/spots/mood/#{@image_id}.jpg"%>" alt="" id="spot-show-hero">
-  <div class="flex flex-row justify-between mt-4 items-stretch" id="spot-show-details">
+  <div id="spot-title"  style="background-image: linear-gradient(0deg, rgba(2,0,36,0.0) 0%, rgba(9,9,121,0) 50%, rgba(9,9,121,0.1) 65%, rgba(2,0,36,0.5) 100%), url('<%="/assets/spots/mood/#{@image_id}.jpg" %>'); background-size: cover;">
     <div class="info flex flex-col">
       <h2><%= @spot.name.gsub('-', ' ').titlecase %></h2>
       <h4><%= @spot.country %></h4>
-      <div class="ratings my-2"><%=raw '&#9733;' * @stars %><%=raw '&#9734;' * (5-@stars) %> (<%= @review_count %>)</div>
-      <div id="spot-show-directions"><%= render 'icons/direction' %><%= @distance %> km</div>
     </div>
-    <div class="conditions flex flex-col items-end justify-even">
-      <div><%= @score_msg %> fit</div>
-      <div class="condition-item flex flex-row justify-between items-baseline"><%= render 'icons/wave' %>
+    <div class="spot-kpi"><%= @score_msg %></div>
+  </div>
+  <div class="flex flex-row justify-between mt-4 items-stretch mx-2" id="spot-show-details">
+    <div class="info">
+      <div class="ratings"><span class="filled-star"><%=raw '&#9733;' * @stars %></span><span class="unfilled-star"><%=raw '&#9734;' * (5-@stars) %></span> (<%= @review_count %> reviews)</div>
+      <div id="spot-show-directions"><%= render 'icons/direction' %><%= @distance %> km - Take me there</div>
+    </div>
+    <div class="conditions flex flex-col items-stretch justify-even">
+
+      <div class="condition-item flex flex-row justify-between items-baseline">
         <div><%= @conditions[:wave_height] %><span class="indicator"> m</span>
+
         </div>
+        <%= render 'icons/wave' %>
       </div>
-      <div class="condition-item flex flex-row justify-between items-baseline"><%= render 'icons/wind' %>
+      <div class="condition-item flex flex-row justify-between items-baseline">
         <div><%= @conditions[:wind_speed] %><span class="indicator"> kph</span>
+
         </div>
+        <%= render 'icons/wind' %>
       </div>
-       <div class="condition-item flex flex-row justify-between items-baseline"><%= render 'icons/period' %>
+      <div class="condition-item flex flex-row justify-between items-baseline">
         <div><%= @conditions[:period] %><span class="indicator"> sec</span>
+
         </div>
+        <%= render 'icons/period' %>
       </div>
 
     </div>
@@ -28,19 +38,27 @@
   <div id="goodtoknow" class="my-3">
     <h3>Good to know</h3>
     <div class="flex flex-col">
-      <div class="flex flex-row justify-between my-1">
-        <%= render 'icons/level' %>
-        <div class="indicator-title">Level</div>
+      <div>
+        <div class="title">
+          <%= render 'icons/level' %>
+          <span class="indicator-title mx-2">Level</span>
+
+        </div>
         <div class="description"><%= @spot.ability_level  %></div>
       </div>
-       <div class="flex flex-row justify-between my-1">
-        <%= render 'icons/vibe' %>
-        <div class="indicator-title">Vibe</div>
+
+      <div>
+        <div class="title">
+          <%= render 'icons/vibe' %>
+          <span class="indicator-title mx-2">Vibe</span>
+        </div>
         <div class="description"><%= @spot.vibe  %></div>
       </div>
-       <div class="flex flex-row justify-between my-1 items-start">
-        <%= render 'icons/access' %>
-        <div class="indicator-title">Access</div>
+      <div>
+        <div class="title">
+          <%= render 'icons/access' %>
+          <span class="indicator-title mx-2">Access</span>
+        </div>
         <div class="description"><%= @spot.access  %></div>
       </div>
     </div>
@@ -59,7 +77,7 @@
         <div class="review-card my-3 p-3 rounded-lg">
           <div class="flex flex-row justify-between items-baseline">
             <span><%= review.user.username %></span>
-            <div class="ratings my-2"><%=raw '&#9733;' * review.rating %><%=raw '&#9734;' * (5-review.rating) %></div>
+            <div><span class="filled-star"><%=raw '&#9733;' * review.rating %></span><span class="unfilled-star"><%=raw '&#9734;' * (5-review.rating) %></span></div>
           </div>
           <h4><%= review.title %> </h4>
           <div class="mb-2"><%= review.description %> </div>
@@ -86,12 +104,4 @@
     <% end %>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
+<div id="show-bg-shape"></div>
