@@ -1,4 +1,6 @@
 #banner {
+  display: flex;
+  flex-direction: column;
   padding: 40px;
   background-image: url("banner.jpg");
   background-size: cover;
@@ -10,6 +12,11 @@
   p {
     margin: 10px 0px;
   }
+
+  #spacer {
+    flex: 1;
+  }
+
 }
 
 .header {
@@ -126,10 +133,6 @@
 
 // FOOTER
 footer {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: space-evenly;
 
