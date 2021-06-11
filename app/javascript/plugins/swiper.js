@@ -7,6 +7,7 @@ const initSwiper = () => {
     speed: 300,
     slidesPerView: 1.22,
     centeredSlides: true,
+    spaceBetween: 10,
   });
 };
 
