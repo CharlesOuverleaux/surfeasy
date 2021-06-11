@@ -17,17 +17,18 @@ class FetchSpotConditionsJob < ApplicationJob
   private
 
   def fetch_spot_condition(spot)
-    url = "https://services.surfline.com/kbyg/spots/forecasts/?spotId=#{spot.surfline_id}&days=1&intervalHours=3"
+    url = "https://services.surfline.com/kbyg/spots/forecasts/?spotId=#{spot.surfline_id}&days=1&intervalHours=1"
+    hours = Time.now.getutc.hour.to_i + 1
     # Get current conditions for each spot
     data = JSON.parse(URI.open(url).read)
     forecasts = data['data']['forecasts']
     units = data['units']
-    return { weather: forecasts[0]['weather'],
-             wind_speed: in_kph(forecasts[0]['wind']['speed'].to_i, units).to_i,
-             wind_direction: forecasts[0]['wind']['direction'].to_i,
-             wave_height: in_meters(forecasts[0]['surf']['max'], units).round(1),
-             swell_direction: forecasts[0]['swells'][0]['direction'].to_i,
-             period: forecasts[0]['swells'][0]['period'] }
+    return { weather: forecasts[hours]['weather'],
+             wind_speed: in_kph(forecasts[hours]['wind']['speed'].to_i, units).to_i,
+             wind_direction: forecasts[hours]['wind']['direction'].to_i,
+             wave_height: in_meters(forecasts[hours]['surf']['max'], units).round(1),
+             swell_direction: forecasts[hours]['swells'][0]['direction'].to_i,
+             period: forecasts[hours]['swells'][0]['period'] }
   end
 
   def in_meters(data, units)
