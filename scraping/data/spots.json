@@ -97,7 +97,14 @@
             "spot_name": "foz-do-arelho",
             "latitude": 39.4354,
             "longitude": -9.2329,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -539,7 +546,14 @@
             "spot_name": "santo-amaro",
             "latitude": 38.683313,
             "longitude": -9.310979,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -562,7 +576,14 @@
             "spot_name": "praia-de-torre",
             "latitude": 38.6757,
             "longitude": -9.3228,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
@@ -570,7 +591,14 @@
             "spot_name": "s-o-joao-da-caparica",
             "latitude": 38.65639486697865,
             "longitude": -9.25081128101192,
-            "description": ""
+            "Swell Direction": 315,
+            "Wind": 165,
+            "Surf Height": "Waist to head high.",
+            "Tide": "All tides - beach can disappear at high.",
+            "description": "Really nice town close by, this is a beach break that has very reliable surf and works all around the year.",
+            "Ability Level": "All Abilities",
+            "Local Vibe": "Friendly, great vibes",
+            "Access": "Parking available, walking distance"
         },
         {
             "country": "Portugal",
