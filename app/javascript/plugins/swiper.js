@@ -4,10 +4,9 @@ import Swiper from "swiper";
 
 const initSwiper = () => {
   new Swiper(".swiper-container", {
-    speed: 400,
-    slidesPerView: 1.2,
+    speed: 300,
+    slidesPerView: 1.22,
     centeredSlides: true,
-    spaceBetween: 10,
   });
 };
 

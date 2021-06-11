@@ -93,9 +93,9 @@
     </div>
     <% if current_user %>
       <%= simple_form_for [ @spot, Review.new ] do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :rating %>
+        <%= f.input :title, placeholder: 'Amazing...'%>
+        <%= f.input :description, placeholder: 'Tell us what you think' %>
+        <%= f.input :rating, placeholder: '1..5' %>
         <%= f.submit "Add review", class: "btn btn-primary" %>
       <% end %>
     <% else %>
