@@ -1,7 +1,7 @@
 require "test_helper"
 
 class SpotTest < ActiveSupport::TestCase
-  test "spot are created correctly" do
+  test "should save spot correctly, when given valid params" do
     spot = Spot.create(name: "agucadoura",
                      surfline_id: "5842041f4e65fad6a7708e5a",
                      lat: 41.432386,
