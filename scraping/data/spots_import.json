@@ -1,0 +1,75 @@
+{
+  "spots": [
+    {
+      "surfline_id": "584204204e65fad6a7709475",
+      "spot_name": "louro",
+      "latitude": 42.752,
+      "longitude": -9.098,
+      "country": "Spain",
+      "description": ""
+    },
+    {
+      "surfline_id": "5842041f4e65fad6a7708e68",
+      "spot_name": "campelo",
+      "latitude": 43.6068,
+      "longitude": -8.1972,
+      "country": "Spain",
+      "description": ""
+    },
+    {
+      "surfline_id": "5842041f4e65fad6a7708e67",
+      "spot_name": "playa-de-traba",
+      "latitude": 43.203436,
+      "longitude": -9.068129,
+      "country": "Spain",
+      "description": ""
+    },
+    {
+      "surfline_id": "5842041f4e65fad6a7708e6a",
+      "spot_name": "playa-de-sabon",
+      "latitude": 43.337717,
+      "longitude": -8.523146,
+      "country": "Spain",
+      "description": ""
+    },
+    {
+      "surfline_id": "584204204e65fad6a7709472",
+      "spot_name": "pantin",
+      "latitude": 43.641251,
+      "longitude": -8.114833,
+      "country": "Spain",
+      "description": ""
+    },
+    {
+      "surfline_id": "5842041f4e65fad6a7708c82",
+      "spot_name": "playa-de-rodo",
+      "latitude": 43.64083333,
+      "longitude": -8.113611111,
+      "Swell Direction": "NW, W",
+      "Wind": "SE",
+      "Surf Height": "Knee high-well overhead",
+      "Tide": "All",
+      "country": "Spain",
+      "description": "Galicia sits on the far western tip of northern Spain and as such, it is open to every swell that passes through the North Atlantic. The rugged coastline is fringed by plunging cliffs, interspersed with sand filled bays that can vary from tiny coves to huge sweeping beaches.Playa do Rodo is one such location, a long golden crescent of sand hemmed in by rocky points at each end. Even in the summer this a consistent and reliable beach. Banks and peaks run the full length and work through the tides. Summer and weekends are pretty busy with locals joined by surfers from Ferrol and A Coruna, but there are usually plenty of waves to go around.",
+      "Ability Level": "Intermediate",
+      "Local Vibe": "Welcoming",
+      "Access": "Simple"
+    },
+    {
+      "surfline_id": "5842041f4e65fad6a7708e63",
+      "spot_name": "patos",
+      "latitude": 42.1596,
+      "longitude": -8.83,
+      "country": "Spain",
+      "description": ""
+    },
+    {
+      "surfline_id": "5842041f4e65fad6a7708e6b",
+      "spot_name": "foz",
+      "latitude": 43.578,
+      "longitude": -7.24,
+      "country": "Spain",
+      "description": ""
+    }
+  ]
+}

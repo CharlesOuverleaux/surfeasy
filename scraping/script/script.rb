@@ -6,12 +6,12 @@ require 'json'
 
 # fixed regions links
 regions = [
-  # 'portugal/porto/2735941',
-  # 'portugal/leiria/2267094',
-  # 'portugal/lisbon/2267056',
-  # 'portugal/set-bal/2262961',
-  # 'portugal/beja/2270984',
-  # 'portugal/faro/2268337',
+  'portugal/porto/2735941',
+  'portugal/leiria/2267094',
+  'portugal/lisbon/2267056',
+  'portugal/set-bal/2262961',
+  'portugal/beja/2270984',
+  'portugal/faro/2268337',
   'spain/galicia/3336902'
 ]
 
@@ -95,7 +95,7 @@ spot_links.each do |link|
   spots << spot
 end
 
-File.open('scraping/data/spots_test.json', 'wb') do |file|
+File.open('scraping/data/spots_import.json', 'wb') do |file|
   file.write(JSON.generate({
                              spots: spots
                            }))
