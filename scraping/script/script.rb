@@ -92,7 +92,7 @@ spot_links.each do |link|
   spots << spot
 end
 
-File.open('scraping/data/spots.json', 'wb') do |file|
+File.open('scraping/data/spots_test.json', 'wb') do |file|
   file.write(JSON.generate({
                              spots: spots
                            }))
