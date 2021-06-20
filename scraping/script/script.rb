@@ -6,12 +6,13 @@ require 'json'
 
 # fixed regions links
 regions = [
-  'portugal/porto/2735941',
-  'portugal/leiria/2267094',
-  'portugal/lisbon/2267056',
-  'portugal/set-bal/2262961',
-  'portugal/beja/2270984',
-  'portugal/faro/2268337'
+  # 'portugal/porto/2735941',
+  # 'portugal/leiria/2267094',
+  # 'portugal/lisbon/2267056',
+  # 'portugal/set-bal/2262961',
+  # 'portugal/beja/2270984',
+  # 'portugal/faro/2268337',
+  'spain/galicia/3336902'
 ]
 
 # URL's
@@ -46,7 +47,6 @@ spot_links.each do |link|
   # split link and take: id & spot name
   link_parts = link.split('/')
   spot = {
-    'country' => 'Portugal',
     'surfline_id' => link_parts.last,
     'spot_name' => link_parts[-2]
   }
@@ -64,6 +64,9 @@ spot_links.each do |link|
     value = element.css('p').text
     spot[key] = value
   end
+  # get country of spot
+  country = html_doc.css('.sl-link').first.text
+  spot['country'] = country
   # description
   description = html_doc.css('.sl-travel-guide__overview__description').text
   spot['description'] = description
