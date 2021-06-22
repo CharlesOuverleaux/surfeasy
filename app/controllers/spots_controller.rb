@@ -87,7 +87,7 @@ class SpotsController < ApplicationController
     return JSON.parse(condition, { symbolize_names: true }) if condition
 
     # return live fetched condition if not found in cache
-    return fetch_condition(spot)
+    return fetch_spot_condition(spot)
   end
 
   def fetch_spot_condition(spot)
