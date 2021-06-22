@@ -48,7 +48,7 @@ def assign_random_review(spot)
       unique = false if review.title == new_review.title
       unique = false if review.description == new_review.description
     end
-    puts unique
+    # puts unique
     if unique
       new_review.save
       reviews << new_review
