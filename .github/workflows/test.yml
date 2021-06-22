@@ -1,3 +1,5 @@
+# GitHub integrated testing / Need to access settings (Hannes)
+# to change the branch settings to activate this test on push 
 name: Test
 
 # triggers on
