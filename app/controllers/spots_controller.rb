@@ -5,7 +5,6 @@ class SpotsController < ApplicationController
   before_action :set_spot, only: [:show]
 
   def index
-    update_cached_conditions
     @filters = parse_filter_params
     @spots = filtered_spots
     @city = @location.city
@@ -80,28 +79,31 @@ class SpotsController < ApplicationController
   end
 
   def current_conditions(spot)
-    # retrieve and parse cached condition for spot from redis
-    condition = $redis.get(spot.surfline_id)
+    file = File.read('scraping/data/spots_conditions.json')
+    data = JSON.parse(file)
 
-    # return cached condition if it exists
-    return JSON.parse(condition, { symbolize_names: true }) if condition
+    spot_condition = data['conditions'].select { |s| s['surfline_id'] == spot.surfline_id }
 
-    # return live fetched condition if not found in cache
-    return fetch_spot_condition(spot)
+    return { weather: spot_condition[0]['weather'],
+             wind_speed: spot_condition[0]['wind_speed'],
+             wind_direction: spot_condition[0]['wind_direction'],
+             wave_height: spot_condition[0]['wave_height'],
+             swell_direction: spot_condition[0]['swell_direction'],
+             period: spot_condition[0]['period'] }
   end
 
   def fetch_spot_condition(spot)
-    url = "https://services.surfline.com/kbyg/spots/forecasts/?spotId=#{spot.surfline_id}&days=1&intervalHours=3"
-    # Get current conditions for each spot
-    data = JSON.parse(URI.open(url).read)
-    forecasts = data['data']['forecasts']
-    units = data['units']
-    return { weather: forecasts[0]['weather'],
-             wind_speed: in_kph(forecasts[0]['wind']['speed'].to_i, units).to_i,
-             wind_direction: forecasts[0]['wind']['direction'].to_i,
-             wave_height: in_meters(forecasts[0]['surf']['max'], units).round(1),
-             swell_direction: forecasts[0]['swells'][0]['direction'].to_i,
-             period: forecasts[0]['swells'][0]['period'] }
+    file = File.read('scraping/data/spots_conditions.json')
+    data = JSON.parse(file)
+
+    spot_condition = data['conditions'].select { |s| s['surfline_id'] == spot.surfline_id }
+
+    return { weather: spot_condition[0]['weather'],
+             wind_speed: spot_condition[0]['wind_speed'],
+             wind_direction: spot_condition[0]['wind_direction'],
+             wave_height: spot_condition[0]['wave_height'],
+             swell_direction: spot_condition[0]['swell_direction'],
+             period: spot_condition[0]['period'] }
   end
 
   def in_meters(data, units)
@@ -129,10 +131,4 @@ class SpotsController < ApplicationController
     return calculate_score(level, ideal_conditions, current_conditions)
   end
 
-  def update_cached_conditions
-    # check if cached conditions are older than 30 mins
-    created_at = $redis.get('created_at')
-    # if they are, update them
-    FetchSpotConditionsJob.perform_later if created_at.nil? || created_at.to_i < Time.now.to_i - 3600
-  end
 end
